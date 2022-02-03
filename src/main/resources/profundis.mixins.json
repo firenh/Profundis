@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "fireopal.profundis.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "MixinVanillaBiomeParameters"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

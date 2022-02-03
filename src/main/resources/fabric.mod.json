@@ -4,16 +4,16 @@
   "version": "${version}",
 
   "name": "Profundis",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "A world generation mod adding in three new underground biomes: the Frozen Caves, the Mushroom Caves, and the Molten Caves. This mod can work on the server without clients needing to download a mod!",
   "authors": [
     "FireNH"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "*",
+    "sources": "https://github.com/firenh/Profundis"
   },
 
-  "license": "CC0-1.0",
+  "license": "LGPL-3.0",
   "icon": "assets/profundis/icon.png",
 
   "environment": "*",

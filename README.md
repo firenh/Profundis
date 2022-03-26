@@ -25,6 +25,6 @@ Mushroom Caves<br>
 
 
 Molten Caves<br>
-<img src = "https://github.com/firenh/Profundis/blob/master/images/2022-02-03_12.08.31.png?raw=true" alt = "Molten Caves">
+<img src = "https://github.com/firenh/Profundis/blob/master/images/2022-03-25_21.34.53.png?raw=true" alt = "Molten Caves">
 <br><br>
 </h3> The Frozen Caves and Mushroom Caves images were taken with Night Vision btw

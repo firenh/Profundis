@@ -46,7 +46,7 @@ public class ProfundisCaveBiomes {
      *      biome
      */ 
 
-    public static ImmutableList<CaveBiome> defaultCaveBiomes = ImmutableList.of(
+    public final static ImmutableList<CaveBiome> defaultCaveBiomes = ImmutableList.of(
         CaveBiome.of(
             ParameterRange.of(-1.0f, -0.6f),
             DEFAULT_PARAMETER,

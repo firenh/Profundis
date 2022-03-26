@@ -9,8 +9,10 @@ import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.intprovider.IntProvider;
+import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.PlacedFeature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
 
 public class CavePillarFeature extends Feature<CavePillarFeatureConfig> {
@@ -30,6 +32,7 @@ public class CavePillarFeature extends Feature<CavePillarFeatureConfig> {
         BlockState innerState = config.innerState();
         BlockState outerState = config.outerState();
         IntProvider lengthOfEnds = config.lengthOfEnds();
+        RegistryEntry<PlacedFeature> bottomFeature = config.bottomFeature();
 
         if (!world.isAir(origin) || world.isAir(origin.up())) {
             return false;
@@ -45,6 +48,8 @@ public class CavePillarFeature extends Feature<CavePillarFeatureConfig> {
         for (Direction d : DIRECTIONS) {
             addEnds(world, origin.offset(d, 1), cursor.offset(d, 1), lengthOfEnds, random, innerState, outerState);
         }
+
+        bottomFeature.value().generate(world, context.getGenerator(), random, cursor);
 
         return true;
     }

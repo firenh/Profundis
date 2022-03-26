@@ -29,7 +29,7 @@ public class Config {
     public boolean generateMushroomCaves = true;
     public boolean generateMoltenCaves = true;
 
-    public Advanced advancedSettings = new Advanced();
+    // public Advanced advancedSettings = new Advanced();
     
     //~~~~~~~~
 

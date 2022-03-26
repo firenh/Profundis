@@ -2,6 +2,9 @@ package fireopal.profundis;
 
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.BuiltinRegistries;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryEntry;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,7 +20,7 @@ import fireopal.profundis.util.FireopalMultinoiseCommand;
 public class Profundis implements ModInitializer {
 	public static final String MODID = "profundis";
 	public static final Logger LOGGER = LogManager.getLogger(MODID);
-	public static final FOModVersion VERSION = FOModVersion.fromString("1.0.0");
+	public static final FOModVersion VERSION = FOModVersion.fromString("1.1.0");
 
 	private static Config config;
 

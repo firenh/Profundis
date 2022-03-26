@@ -1,6 +1,6 @@
 package fireopal.profundis.util;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
@@ -9,6 +9,7 @@ import net.minecraft.sound.BiomeMoodSound;
 import net.minecraft.sound.MusicSound;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.biome.GenerationSettings;
@@ -144,15 +145,16 @@ public class FireopalBiomeAPI_v1_2 {
     
     public class Generation {
         //Adds features to a specific Generation Step
-
-        public static void features(GenerationSettings.Builder generationSettings, GenerationStep.Feature generationStep, PlacedFeature... placedFeatures) {
-            for (PlacedFeature p : placedFeatures) {
+        
+        @SafeVarargs
+        public static void features(GenerationSettings.Builder generationSettings, GenerationStep.Feature generationStep, RegistryEntry<PlacedFeature>... placedFeatures) {
+            for (RegistryEntry<PlacedFeature> p : placedFeatures) {
                 generationSettings.feature(generationStep, p);
             }
         }
 
-        public static void features(GenerationSettings.Builder generationSettings, GenerationStep.Feature generationStep, ArrayList<PlacedFeature> placedFeatures) {
-            for (PlacedFeature p : placedFeatures) {
+        public static void features(GenerationSettings.Builder generationSettings, GenerationStep.Feature generationStep, List<RegistryEntry<PlacedFeature>> placedFeatures) {
+            for (RegistryEntry<PlacedFeature> p : placedFeatures) {
                 generationSettings.feature(generationStep, p);
             }
         }
@@ -167,61 +169,74 @@ public class FireopalBiomeAPI_v1_2 {
 
         //Adds carvers to a specific Generation Step
 
-        public static void carvers(GenerationSettings.Builder generationSettings, GenerationStep.Carver generationStep, ConfiguredCarver<?>... configuredCarver) {
-            for (ConfiguredCarver<?> c : configuredCarver) {
+        @SafeVarargs
+        public static void carvers(GenerationSettings.Builder generationSettings, GenerationStep.Carver generationStep, RegistryEntry<ConfiguredCarver<?>>... configuredCarver) {
+            for (RegistryEntry<ConfiguredCarver<?>> c : configuredCarver) {
                 generationSettings.carver(generationStep, c);
             }
         }
 
         //Adds features to set generation steps
 
-        public static void lakeFeatures(GenerationSettings.Builder generationSettings, PlacedFeature... placedFeatures) {
+        @SafeVarargs
+        public static void lakeFeatures(GenerationSettings.Builder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
             features(generationSettings, GenerationStep.Feature.LAKES, placedFeatures);
         }
-
-        public static void localModificationFeatures(GenerationSettings.Builder generationSettings, PlacedFeature... placedFeatures) {
+        
+        @SafeVarargs
+        public static void localModificationFeatures(GenerationSettings.Builder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
             features(generationSettings, GenerationStep.Feature.LOCAL_MODIFICATIONS, placedFeatures);
         }
-
-        public static void rawGenerationFeatures(GenerationSettings.Builder generationSettings, PlacedFeature... placedFeatures) {
+        
+        @SafeVarargs
+        public static void rawGenerationFeatures(GenerationSettings.Builder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
             features(generationSettings, GenerationStep.Feature.RAW_GENERATION, placedFeatures);
         }
-
-        public static void strongholdFeatures(GenerationSettings.Builder generationSettings, PlacedFeature... placedFeatures) {
+        
+        @SafeVarargs
+        public static void strongholdFeatures(GenerationSettings.Builder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
             features(generationSettings, GenerationStep.Feature.STRONGHOLDS, placedFeatures);
         }
-
-        public static void surfaceStructureFeatures(GenerationSettings.Builder generationSettings, PlacedFeature... placedFeatures) {
+        
+        @SafeVarargs
+        public static void surfaceStructureFeatures(GenerationSettings.Builder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
             features(generationSettings, GenerationStep.Feature.SURFACE_STRUCTURES, placedFeatures);
         }
-
-        public static void topLayerModificationFeatures(GenerationSettings.Builder generationSettings, PlacedFeature... placedFeatures) {
+        
+        @SafeVarargs
+        public static void topLayerModificationFeatures(GenerationSettings.Builder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
             features(generationSettings, GenerationStep.Feature.TOP_LAYER_MODIFICATION, placedFeatures);
         }
-
-        public static void undergroundStructureFeatures(GenerationSettings.Builder generationSettings, PlacedFeature... placedFeatures) {
+        
+        @SafeVarargs
+        public static void undergroundStructureFeatures(GenerationSettings.Builder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
             features(generationSettings, GenerationStep.Feature.UNDERGROUND_DECORATION, placedFeatures);
         }
-
-        public static void undergroundOresFeatures(GenerationSettings.Builder generationSettings, PlacedFeature... placedFeatures) {
+        
+        @SafeVarargs
+        public static void undergroundOresFeatures(GenerationSettings.Builder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
             features(generationSettings, GenerationStep.Feature.UNDERGROUND_ORES, placedFeatures);
         }
-
-        public static void undergroundDecorationFeatures(GenerationSettings.Builder generationSettings, PlacedFeature... placedFeatures) {
+        
+        @SafeVarargs
+        public static void undergroundDecorationFeatures(GenerationSettings.Builder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
             features(generationSettings, GenerationStep.Feature.UNDERGROUND_STRUCTURES, placedFeatures);
         }
-
-        public static void vegetalDecorationFeatures(GenerationSettings.Builder generationSettings, PlacedFeature... placedFeatures) {
+        
+        @SafeVarargs
+        public static void vegetalDecorationFeatures(GenerationSettings.Builder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
             features(generationSettings, GenerationStep.Feature.VEGETAL_DECORATION, placedFeatures);
         }
 
         //Adds carvers to set generation steps
-
-        public static void airCarver(GenerationSettings.Builder generationSettings, ConfiguredCarver<?>... configuredCarver) {
+        
+        @SafeVarargs
+        public static void airCarver(GenerationSettings.Builder generationSettings, RegistryEntry<ConfiguredCarver<?>>... configuredCarver) {
             carvers(generationSettings, GenerationStep.Carver.AIR, configuredCarver);
         }
-
-        public static void liquidCarver(GenerationSettings.Builder generationSettings, ConfiguredCarver<?>... configuredCarver) {
+        
+        @SafeVarargs
+        public static void liquidCarver(GenerationSettings.Builder generationSettings, RegistryEntry<ConfiguredCarver<?>>... configuredCarver) {
             carvers(generationSettings, GenerationStep.Carver.LIQUID, configuredCarver);
         }
     }

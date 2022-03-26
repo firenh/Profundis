@@ -24,6 +24,7 @@ public class FrozenCavesBiome {
         Generation.undergroundOresFeatures(generationSettings, ProfundisPlacedFeatures.FROZEN_CAVES_REDSTONE_ORE);
         Generation.undergroundDecorationFeatures(generationSettings,
             ProfundisPlacedFeatures.ICY_SURFACE,
+            ProfundisPlacedFeatures.LARGE_ICY_SURFACE,
             ProfundisPlacedFeatures.SNOW_LAYER_CAVE,
             ProfundisPlacedFeatures.FROZEN_AQUIFER,
             ProfundisPlacedFeatures.FROZEN_LAVA_AQUIFER,

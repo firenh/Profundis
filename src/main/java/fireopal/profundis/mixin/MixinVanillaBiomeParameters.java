@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import fireopal.profundis.Profundis;
+import fireopal.profundis.gen.ProfundisCaveBiomes;
 import fireopal.profundis.gen.ProfundisCaveBiomes.CaveBiome;
 import fireopal.profundis.util.VanillaBiomeParametersHelper;
 
@@ -22,7 +22,7 @@ import fireopal.profundis.util.VanillaBiomeParametersHelper;
 public class MixinVanillaBiomeParameters {
 	@Inject(at = @At("HEAD"), method = "writeCaveBiomes(Ljava/util/function/Consumer;)V")
 	public void writeCaveBiomes(Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> parameters, CallbackInfo info) {
-		for (CaveBiome c : Profundis.getConfig().advancedSettings.caveBiomes) {
+		for (CaveBiome c : ProfundisCaveBiomes.defaultCaveBiomes) {
 			VanillaBiomeParametersHelper.writeCaveBiomeParameters(parameters,
 				c.temperature,
 				c.humidity,

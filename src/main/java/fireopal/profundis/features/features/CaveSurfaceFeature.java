@@ -84,7 +84,7 @@ public class CaveSurfaceFeature extends Feature<CaveSurfaceFeatureConfig> {
             return true;
         }
 
-        if (BlockTags.BASE_STONE_OVERWORLD.contains(blockState.getBlock())) {
+        if (blockState.isIn(BlockTags.BASE_STONE_OVERWORLD)) {
             return true;
         }
 

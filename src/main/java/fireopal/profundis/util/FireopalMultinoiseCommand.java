@@ -16,15 +16,15 @@ import net.minecraft.world.gen.chunk.ChunkGenerator;
 
 public class FireopalMultinoiseCommand {
     public static void register() {
-        CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
-            dispatcher.register(
-                (LiteralArgumentBuilder<ServerCommandSource>) CommandManager.literal("multinoise").requires(source -> source.hasPermissionLevel(2))
-                    .then(CommandManager.argument("pos", BlockPosArgumentType.blockPos())
-                        .executes(context -> FireopalMultinoiseCommand.execute((ServerCommandSource)context.getSource(), BlockPosArgumentType.getLoadedBlockPos(context, "pos"))
-                    )
-                )
-            );
-        });
+        // CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
+        //     dispatcher.register(
+        //         (LiteralArgumentBuilder<ServerCommandSource>) CommandManager.literal("multinoise").requires(source -> source.hasPermissionLevel(2))
+        //             .then(CommandManager.argument("pos", BlockPosArgumentType.blockPos())
+        //                 .executes(context -> FireopalMultinoiseCommand.execute((ServerCommandSource)context.getSource(), BlockPosArgumentType.getLoadedBlockPos(context, "pos"))
+        //             )
+        //         )
+        //     );
+        // });
     }
 
     public static int execute(ServerCommandSource source, BlockPos pos) {

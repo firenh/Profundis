@@ -5,10 +5,15 @@ import com.google.common.collect.ImmutableList;
 import fireopal.profundis.biomes.ProfundisBiomeKeys;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.source.util.MultiNoiseUtil;
+import net.minecraft.world.biome.source.util.MultiNoiseUtil; 
 import net.minecraft.world.biome.source.util.MultiNoiseUtil.ParameterRange;
 
 public class ProfundisCaveBiomes {
+    /**
+     * {@linkplain net.minecraft.world.biome.source.util.VanillaBiomeParameters}
+     */
+
+
     public static class CaveBiome {
         public final ParameterRange temperature, humidity, continentalness, erosion, depth, weirdness;
         public final float offset;
@@ -70,12 +75,23 @@ public class ProfundisCaveBiomes {
         ),
 
         CaveBiome.of(
-            ParameterRange.of(-0.45f, -0.45f),
-            ParameterRange.of(-0.8f, -0.4f),
+            ParameterRange.of(-0.15f, 0.2f),
+            ParameterRange.of(0.3375f, 1.0f),
             ParameterRange.of(0f, 0.35f),
             DEFAULT_PARAMETER,
             ALL_HEIGHT_RANGE,
+            ParameterRange.of(0.7f, 1.0f),
+            0f,
+            ProfundisBiomeKeys.MUSHROOM_CAVES
+        ),
+
+        CaveBiome.of(
+            ParameterRange.of(-0.15f, 0.2f),
+            ParameterRange.of(0.3375f, 1.0f),
+            ParameterRange.of(0f, 0.35f),
             DEFAULT_PARAMETER,
+            ALL_HEIGHT_RANGE,
+            ParameterRange.of(-1.0f, -0.7f),
             0f,
             ProfundisBiomeKeys.MUSHROOM_CAVES
         ),

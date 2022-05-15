@@ -2,7 +2,9 @@
 
 <h2><center> A world generation mod adding in three new underground biomes: the Frozen Caves, the Mushroom Caves, and the Molten Caves. </center></h2>
 
-<br><br>
+<h3><a href="https://modrinth.com/mod/profundis">[Download on Modrinth]</a></h3>
+
+
 Profundis is a world generation mod which adds three new vanilla-styled underground biomes to the game: the Frozen Caves, the Mushroom Caves, and the Molten Caves. These three new biomes to wonders to making the underground feel even more diverse.
 
 <i>Profundis is a server-sided mod, meaning it can be installed on a server and clients can join without needing to install a mod, much like a plugin! It can also be installed on a client for Singleplayer!</i>

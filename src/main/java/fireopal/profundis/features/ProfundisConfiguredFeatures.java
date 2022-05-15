@@ -1,12 +1,16 @@
 package fireopal.profundis.features;
 
+import java.util.List;
+
 import fireopal.profundis.Profundis;
 import fireopal.profundis.features.features.config.CavePillarFeatureConfig;
 import fireopal.profundis.features.features.config.CaveSurfaceFeatureConfig;
 import fireopal.profundis.features.features.config.IcicleFeatureConfig;
 import fireopal.profundis.features.features.config.NetherrackBaseFeatureConfig;
+import fireopal.profundis.features.features.config.ShelfFungiFeatureConfig;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.MushroomBlock;
 import net.minecraft.util.math.intprovider.BiasedToBottomIntProvider;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
@@ -20,6 +24,8 @@ import net.minecraft.world.gen.feature.DeltaFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.FeatureConfig;
 import net.minecraft.world.gen.feature.PlacedFeatures;
+import net.minecraft.world.gen.feature.RandomFeatureConfig;
+import net.minecraft.world.gen.feature.RandomFeatureEntry;
 public class ProfundisConfiguredFeatures {
     public static <FC extends FeatureConfig, F extends Feature<FC>> RegistryEntry<ConfiguredFeature<?, ?>> register(String id, F feature, FC config) {
         return BuiltinRegistries.add(BuiltinRegistries.CONFIGURED_FEATURE, Profundis.id(id), new ConfiguredFeature<FC, F>(feature, config));
@@ -161,6 +167,129 @@ public class ProfundisConfiguredFeatures {
             UniformIntProvider.create(30, 50),
             false,
             false
+        )
+    );
+
+    public static final RegistryEntry<ConfiguredFeature<?, ?>> LARGE_BROWN_SHELF_FUNGI = register("large_brown_shelf_fungi",
+        ProfundisFeatures.SHELF_FUNGI_FEATURE,
+        new ShelfFungiFeatureConfig(
+            UniformIntProvider.create(4, 10),
+            UniformIntProvider.create(3, 7),
+            Blocks.BROWN_MUSHROOM_BLOCK.getDefaultState().with(MushroomBlock.DOWN, false),
+            Blocks.BROWN_MUSHROOM_BLOCK.getDefaultState()
+                .with(MushroomBlock.DOWN, false)
+                .with(MushroomBlock.NORTH, false)
+                .with(MushroomBlock.SOUTH, false)
+                .with(MushroomBlock.EAST, false)
+                .with(MushroomBlock.WEST, false)
+        )
+    );
+
+    public static final RegistryEntry<ConfiguredFeature<?, ?>> SMALL_BROWN_SHELF_FUNGI = register("small_brown_shelf_fungi",
+        ProfundisFeatures.SHELF_FUNGI_FEATURE,
+        new ShelfFungiFeatureConfig(
+            UniformIntProvider.create(2, 5),
+            UniformIntProvider.create(3, 7),
+            Blocks.BROWN_MUSHROOM_BLOCK.getDefaultState().with(MushroomBlock.DOWN, false),
+            Blocks.BROWN_MUSHROOM_BLOCK.getDefaultState()
+                .with(MushroomBlock.DOWN, false)
+                .with(MushroomBlock.NORTH, false)
+                .with(MushroomBlock.SOUTH, false)
+                .with(MushroomBlock.EAST, false)
+                .with(MushroomBlock.WEST, false)
+        )
+    );
+
+    public static final RegistryEntry<ConfiguredFeature<?, ?>> LARGE_WHITE_SHELF_FUNGI = register("large_white_shelf_fungi",
+        ProfundisFeatures.SHELF_FUNGI_FEATURE,
+        new ShelfFungiFeatureConfig(
+            UniformIntProvider.create(4, 10),
+            UniformIntProvider.create(3, 7),
+            Blocks.MUSHROOM_STEM.getDefaultState().with(MushroomBlock.DOWN, false),
+            Blocks.MUSHROOM_STEM.getDefaultState()
+                .with(MushroomBlock.DOWN, false)
+                .with(MushroomBlock.NORTH, false)
+                .with(MushroomBlock.SOUTH, false)
+                .with(MushroomBlock.EAST, false)
+                .with(MushroomBlock.WEST, false)
+        )
+    );
+
+    public static final RegistryEntry<ConfiguredFeature<?, ?>> SMALL_WHITE_SHELF_FUNGI = register("small_white_shelf_fungi",
+        ProfundisFeatures.SHELF_FUNGI_FEATURE,
+        new ShelfFungiFeatureConfig(
+            UniformIntProvider.create(2, 5),
+            UniformIntProvider.create(3, 7),
+            Blocks.MUSHROOM_STEM.getDefaultState().with(MushroomBlock.DOWN, false),
+            Blocks.MUSHROOM_STEM.getDefaultState()
+                .with(MushroomBlock.DOWN, false)
+                .with(MushroomBlock.NORTH, false)
+                .with(MushroomBlock.SOUTH, false)
+                .with(MushroomBlock.EAST, false)
+                .with(MushroomBlock.WEST, false)
+        )
+    );
+
+    public static final RegistryEntry<ConfiguredFeature<?, ?>> LARGE_RED_SHELF_FUNGI = register("large_red_shelf_fungi",
+        ProfundisFeatures.SHELF_FUNGI_FEATURE,
+        new ShelfFungiFeatureConfig(
+            UniformIntProvider.create(4, 10),
+            UniformIntProvider.create(3, 7),
+            Blocks.RED_MUSHROOM_BLOCK.getDefaultState().with(MushroomBlock.DOWN, false),
+            Blocks.RED_MUSHROOM_BLOCK.getDefaultState()
+                .with(MushroomBlock.DOWN, false)
+                .with(MushroomBlock.NORTH, false)
+                .with(MushroomBlock.SOUTH, false)
+                .with(MushroomBlock.EAST, false)
+                .with(MushroomBlock.WEST, false)
+        )
+    );
+
+    public static final RegistryEntry<ConfiguredFeature<?, ?>> SMALL_RED_SHELF_FUNGI = register("small_red_shelf_fungi",
+        ProfundisFeatures.SHELF_FUNGI_FEATURE,
+        new ShelfFungiFeatureConfig(
+            UniformIntProvider.create(2, 5),
+            UniformIntProvider.create(3, 7),
+            Blocks.RED_MUSHROOM_BLOCK.getDefaultState().with(MushroomBlock.DOWN, false),
+            Blocks.RED_MUSHROOM_BLOCK.getDefaultState()
+                .with(MushroomBlock.DOWN, false)
+                .with(MushroomBlock.NORTH, false)
+                .with(MushroomBlock.SOUTH, false)
+                .with(MushroomBlock.EAST, false)
+                .with(MushroomBlock.WEST, false)
+        )
+    );
+
+    public static final RegistryEntry<ConfiguredFeature<?, ?>> SHELF_FUNGI = register("shelf_fungi",
+        Feature.RANDOM_SELECTOR,
+        new RandomFeatureConfig(
+            List.of(
+                new RandomFeatureEntry(
+                    PlacedFeatures.createEntry(LARGE_BROWN_SHELF_FUNGI),
+                    2f/ 15f
+                ),
+                new RandomFeatureEntry(
+                    PlacedFeatures.createEntry(SMALL_BROWN_SHELF_FUNGI),
+                    4f/ 15f
+                ),
+                new RandomFeatureEntry(
+                    PlacedFeatures.createEntry(LARGE_WHITE_SHELF_FUNGI),
+                    2f/ 15f
+                ),
+                new RandomFeatureEntry(
+                    PlacedFeatures.createEntry(SMALL_WHITE_SHELF_FUNGI),
+                    4f/ 15f
+                ),
+                new RandomFeatureEntry(
+                    PlacedFeatures.createEntry(LARGE_RED_SHELF_FUNGI),
+                    1f/ 15f
+                ),
+                new RandomFeatureEntry(
+                    PlacedFeatures.createEntry(SMALL_RED_SHELF_FUNGI),
+                    2f/ 15f
+                )
+            ),
+            PlacedFeatures.createEntry(SMALL_BROWN_SHELF_FUNGI)
         )
     );
 

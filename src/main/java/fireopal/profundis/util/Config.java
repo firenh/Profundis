@@ -28,6 +28,7 @@ public class Config {
     public boolean generateFrozenCaves = true;
     public boolean generateMushroomCaves = true;
     public boolean generateMoltenCaves = true;
+    public Debug debug = new Debug();
 
     // public Advanced advancedSettings = new Advanced();
     
@@ -41,6 +42,10 @@ public class Config {
         public Advanced() {
             caveBiomes.addAll(ProfundisCaveBiomes.defaultCaveBiomes);
         }
+    }
+
+    public static class Debug {
+        public boolean enableMultinoiseCommand = false;
     }
 
     public static Config init() {

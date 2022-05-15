@@ -7,10 +7,12 @@ import fireopal.profundis.features.features.IcicleFeature;
 import fireopal.profundis.features.features.LavaFixerFeature;
 import fireopal.profundis.features.features.NetherrackBaseFeature;
 import fireopal.profundis.features.features.NotStupidDeltaFeature;
+import fireopal.profundis.features.features.ShelfFungiFeature;
 import fireopal.profundis.features.features.config.CavePillarFeatureConfig;
 import fireopal.profundis.features.features.config.CaveSurfaceFeatureConfig;
 import fireopal.profundis.features.features.config.IcicleFeatureConfig;
 import fireopal.profundis.features.features.config.NetherrackBaseFeatureConfig;
+import fireopal.profundis.features.features.config.ShelfFungiFeatureConfig;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.DeltaFeatureConfig;
@@ -28,6 +30,7 @@ public class ProfundisFeatures {
     public final static Feature<DefaultFeatureConfig> LAVA_FIXER_FEATURE;
     public final static Feature<DeltaFeatureConfig> NOT_STUPID_DELTA_FEATURE;
     public final static Feature<NetherrackBaseFeatureConfig> NETHERRACK_BASE_FEATURE;
+    public final static Feature<ShelfFungiFeatureConfig> SHELF_FUNGI_FEATURE;
 
     static {
         ICICLE_FEATURE = register("icicle", new IcicleFeature(IcicleFeatureConfig.CODEC));
@@ -36,6 +39,7 @@ public class ProfundisFeatures {
         LAVA_FIXER_FEATURE = register("lava_fixer_feature", new LavaFixerFeature(DefaultFeatureConfig.CODEC));
         NOT_STUPID_DELTA_FEATURE = register("not_stupid_delta_feature", new NotStupidDeltaFeature(DeltaFeatureConfig.CODEC));
         NETHERRACK_BASE_FEATURE = register("netherrack_base_feature", new NetherrackBaseFeature(NetherrackBaseFeatureConfig.CODEC));
+        SHELF_FUNGI_FEATURE = register("shelf_fungi_feature", new ShelfFungiFeature(ShelfFungiFeatureConfig.CODEC));
     }
 
     public static void init() {

@@ -2,6 +2,7 @@ package fireopal.profundis.util;
 
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 
+import fireopal.profundis.Profundis;
 import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import net.minecraft.command.argument.BlockPosArgumentType;
 import net.minecraft.server.command.CommandManager;
@@ -16,15 +17,17 @@ import net.minecraft.world.gen.chunk.ChunkGenerator;
 
 public class FireopalMultinoiseCommand {
     public static void register() {
-        // CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
-        //     dispatcher.register(
-        //         (LiteralArgumentBuilder<ServerCommandSource>) CommandManager.literal("multinoise").requires(source -> source.hasPermissionLevel(2))
-        //             .then(CommandManager.argument("pos", BlockPosArgumentType.blockPos())
-        //                 .executes(context -> FireopalMultinoiseCommand.execute((ServerCommandSource)context.getSource(), BlockPosArgumentType.getLoadedBlockPos(context, "pos"))
-        //             )
-        //         )
-        //     );
-        // });
+        if (!Profundis.getConfig().debug.enableMultinoiseCommand) return;
+
+        CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
+            dispatcher.register(
+                (LiteralArgumentBuilder<ServerCommandSource>) CommandManager.literal("multinoise").requires(source -> source.hasPermissionLevel(2))
+                    .then(CommandManager.argument("pos", BlockPosArgumentType.blockPos())
+                        .executes(context -> FireopalMultinoiseCommand.execute((ServerCommandSource)context.getSource(), BlockPosArgumentType.getLoadedBlockPos(context, "pos"))
+                    )
+                )
+            );
+        });
     }
 
     public static int execute(ServerCommandSource source, BlockPos pos) {
@@ -38,5 +41,4 @@ public class FireopalMultinoiseCommand {
         source.sendFeedback(text, false);
         return 0;
     }
-
 }

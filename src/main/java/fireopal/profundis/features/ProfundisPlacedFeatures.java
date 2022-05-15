@@ -3,6 +3,8 @@ package fireopal.profundis.features;
 import java.util.List;
 
 import fireopal.profundis.Profundis;
+import fireopal.profundis.util.GeneralUtil;
+import net.minecraft.tag.BlockTags;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.registry.BuiltinRegistries;
@@ -209,6 +211,23 @@ public class ProfundisPlacedFeatures {
         RandomOffsetPlacementModifier.vertically(
             ConstantIntProvider.create(1)
         ), BiomePlacementModifier.of()
+    );
+
+    private static final List<PlacementModifier> COUNT_20 = List.of(CountPlacementModifier.of(20));
+
+    private static final List<PlacementModifier> SHELF_FUNGI_PLACEMENT_MODIFIERS = List.of(
+        SquarePlacementModifier.of(), 
+        PlacedFeatures.BOTTOM_TO_120_RANGE, 
+        EnvironmentScanPlacementModifier.of(
+            Direction.DOWN, BlockPredicate.alwaysTrue(), 
+            BlockPredicate.matchingBlockTag(BlockTags.BASE_STONE_OVERWORLD), 14
+        ),
+        BiomePlacementModifier.of() 
+    );
+
+    public static final RegistryEntry<PlacedFeature> SHELF_FUNGI = register("shelf_fungi",
+        ProfundisConfiguredFeatures.SHELF_FUNGI,
+        GeneralUtil.combineLists(COUNT_20, SHELF_FUNGI_PLACEMENT_MODIFIERS)
     );
 
     public static final RegistryEntry<PlacedFeature> MOLTEN_CAVES_DELTA = register("molten_caves_delta", 

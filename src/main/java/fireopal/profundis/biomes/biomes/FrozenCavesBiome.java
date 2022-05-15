@@ -4,6 +4,8 @@ import fireopal.profundis.biomes.ProfundisDefaultBiomeFeatures;
 import fireopal.profundis.features.ProfundisPlacedFeatures;
 import fireopal.profundis.util.FireopalBiomeAPI_v1_2.Build;
 import fireopal.profundis.util.FireopalBiomeAPI_v1_2.Generation;
+import net.minecraft.client.sound.MusicType;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.biome.GenerationSettings;
@@ -34,7 +36,8 @@ public class FrozenCavesBiome {
         );
 
         BiomeEffects.Builder biomeEffects = new BiomeEffects.Builder()
-            .skyColor(8364543).fogColor(12638463).waterColor(3750089).waterFogColor(329011);
+            .skyColor(8364543).fogColor(12638463).waterColor(3750089).waterFogColor(329011)
+            .music(MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_FROZEN_PEAKS));
 
         Build.properties(biome, Precipitation.SNOW, Biome.Category.UNDERGROUND, 0f, 0.5f);
         return Build.finalize(biome, spawnSettings, generationSettings, biomeEffects);

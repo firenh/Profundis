@@ -4,7 +4,6 @@ import java.util.Iterator;
 
 import com.mojang.serialization.Codec;
 
-import fireopal.profundis.Profundis;
 import fireopal.profundis.features.features.config.ShelfFungiFeatureConfig;
 import net.minecraft.block.BlockState;
 import net.minecraft.tag.BlockTags;
@@ -26,13 +25,11 @@ public class ShelfFungiFeature extends Feature<ShelfFungiFeatureConfig> {
         Random random = context.getRandom();
         StructureWorldAccess world = context.getWorld();
 
-        final double[] randomVals = {random.nextDouble(), random.nextDouble(), random.nextDouble()};
         BlockState upperState = config.upperState();
         BlockState underState = config.underState();
         int radius = config.radius().get(random);
         int iterations = config.iterations().get(random);
         int radiusExt = (int)(radius * 1.5);
-        int placements = 0;
 
         // this.setBlockState(world, origin, upperState);
 
@@ -47,7 +44,6 @@ public class ShelfFungiFeature extends Feature<ShelfFungiFeatureConfig> {
             if (isValidLocation(origin, next, iterations, radius, random, world)) {
                 this.setBlockState(world, next, upperState);
                 hasPlaced = true;
-                placements += 1;
                 // Profundis.LOGGER.info("placements: " + placements);
             }
         }

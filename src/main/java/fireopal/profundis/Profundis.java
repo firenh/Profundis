@@ -3,6 +3,8 @@ package fireopal.profundis;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
 
+import java.util.Objects;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -12,7 +14,7 @@ import fireopal.profundis.features.ProfundisFeatures;
 import fireopal.profundis.features.ProfundisPlacedFeatures;
 import fireopal.profundis.util.Config;
 import fireopal.profundis.util.FOModVersion;
-import fireopal.profundis.util.FireopalMultinoiseCommand;
+// import fireopal.profundis.util.FireopalMultinoiseCommand;
 
 public class Profundis implements ModInitializer {
 	public static final String MODID = "profundis";
@@ -29,7 +31,7 @@ public class Profundis implements ModInitializer {
 	public void onInitialize() {
 		loadConfigFromFile();
 
-		FireopalMultinoiseCommand.register();
+		// FireopalMultinoiseCommand.register();
 		ProfundisFeatures.init();
 		ProfundisConfiguredFeatures.init();
 		ProfundisPlacedFeatures.init();
@@ -37,6 +39,10 @@ public class Profundis implements ModInitializer {
 	}
 
 	public static Config getConfig() {
+		if (Objects.isNull(config)) {
+			loadConfigFromFile();
+		}
+
 		return config;
 	}
 

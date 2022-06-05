@@ -43,7 +43,7 @@ public class MoltenCavesBiome {
             .skyColor(7842047).fogColor(12638463).waterColor(4159204).waterFogColor(329011)
             .music(MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_DRIPSTONE_CAVES));
 
-        Build.properties(biome, Precipitation.RAIN, Biome.Category.UNDERGROUND, 0.9f, 1f);
+        Build.properties(biome, Precipitation.RAIN, 0.9f, 1f);
         return Build.finalize(biome, spawnSettings, generationSettings, biomeEffects);
     }
 }

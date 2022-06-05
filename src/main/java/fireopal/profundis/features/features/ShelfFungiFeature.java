@@ -1,7 +1,6 @@
 package fireopal.profundis.features.features;
 
 import java.util.Iterator;
-import java.util.Random;
 
 import com.mojang.serialization.Codec;
 
@@ -10,6 +9,7 @@ import fireopal.profundis.features.features.config.ShelfFungiFeatureConfig;
 import net.minecraft.block.BlockState;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
@@ -48,7 +48,7 @@ public class ShelfFungiFeature extends Feature<ShelfFungiFeatureConfig> {
                 this.setBlockState(world, next, upperState);
                 hasPlaced = true;
                 placements += 1;
-                Profundis.LOGGER.info("placements: " + placements);
+                // Profundis.LOGGER.info("placements: " + placements);
             }
         }
 

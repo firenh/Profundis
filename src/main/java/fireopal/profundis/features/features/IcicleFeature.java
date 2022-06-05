@@ -1,13 +1,12 @@
 package fireopal.profundis.features.features;
 
-import java.util.Random;
-
 import com.mojang.serialization.Codec;
 
 import fireopal.profundis.features.features.config.IcicleFeatureConfig;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;

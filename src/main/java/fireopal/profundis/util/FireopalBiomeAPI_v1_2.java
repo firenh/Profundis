@@ -311,10 +311,10 @@ public class FireopalBiomeAPI_v1_2 {
     }
 
     public class Build {
-        public static void properties(Biome.Builder biome, Precipitation precipitation, Biome.Category category, float temperature, float downfall) {
+        public static void properties(Biome.Builder biome, Precipitation precipitation, float temperature, float downfall) {
             biome
                 .precipitation(precipitation)
-                .category(category)
+                // .category(category)
                 .temperature(temperature)
                 .downfall(downfall);
         }

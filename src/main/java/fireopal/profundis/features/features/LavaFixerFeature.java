@@ -2,7 +2,6 @@ package fireopal.profundis.features.features;
 
 import com.mojang.serialization.Codec;
 
-import fireopal.profundis.Profundis;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -52,7 +51,7 @@ public class LavaFixerFeature extends Feature<DefaultFeatureConfig> {
                 }
 
                 if (fixed == false && world.isAir(cursor.down())) {
-                    Profundis.LOGGER.info("fixed lava at " + cursor.getX() + "x, " + cursor.getY() + "y, " + cursor.getZ() + "z");
+                    // Profundis.LOGGER.info("fixed lava at " + cursor.getX() + "x, " + cursor.getY() + "y, " + cursor.getZ() + "z");
                     world.setBlockState(cursor, setState, 0);
                     fixed = true;
                 }

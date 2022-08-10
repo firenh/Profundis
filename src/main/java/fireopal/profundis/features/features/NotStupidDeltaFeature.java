@@ -1,6 +1,5 @@
 package fireopal.profundis.features.features;
 
-import java.util.Random;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
@@ -10,6 +9,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.gen.feature.DeltaFeature;

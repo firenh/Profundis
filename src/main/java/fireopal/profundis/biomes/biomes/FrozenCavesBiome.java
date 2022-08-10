@@ -39,7 +39,7 @@ public class FrozenCavesBiome {
             .skyColor(8364543).fogColor(12638463).waterColor(3750089).waterFogColor(329011)
             .music(MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_FROZEN_PEAKS));
 
-        Build.properties(biome, Precipitation.SNOW, Biome.Category.UNDERGROUND, 0f, 0.5f);
+        Build.properties(biome, Precipitation.SNOW, 0f, 0.5f);
         return Build.finalize(biome, spawnSettings, generationSettings, biomeEffects);
     }
 }

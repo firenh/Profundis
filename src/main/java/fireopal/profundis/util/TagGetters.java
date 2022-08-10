@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import fireopal.profundis.Profundis;
 import net.minecraft.block.Block;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.tag.TagKey;
@@ -34,7 +33,7 @@ public class TagGetters {
 
     public static RegistryEntryList<Block> baseStoneOverworld() {
         var returned = getBlocks(BlockTags.BASE_STONE_OVERWORLD);
-        Profundis.LOGGER.info("Base Stone Overworld:" + registryEntryListToList(returned).size());
+        // Profundis.LOGGER.info("Base Stone Overworld:" + registryEntryListToList(returned).size());
         return returned;
     }
 }

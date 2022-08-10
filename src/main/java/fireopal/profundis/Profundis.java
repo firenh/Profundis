@@ -12,7 +12,6 @@ import fireopal.profundis.features.ProfundisFeatures;
 import fireopal.profundis.features.ProfundisPlacedFeatures;
 import fireopal.profundis.util.Config;
 import fireopal.profundis.util.FOModVersion;
-import fireopal.profundis.util.FireopalMultinoiseCommand;
 
 public class Profundis implements ModInitializer {
 	public static final String MODID = "profundis";
@@ -29,7 +28,7 @@ public class Profundis implements ModInitializer {
 	public void onInitialize() {
 		loadConfigFromFile();
 
-		FireopalMultinoiseCommand.register();
+		// FireopalMultinoiseCommand.register();
 		ProfundisFeatures.init();
 		ProfundisConfiguredFeatures.init();
 		ProfundisPlacedFeatures.init();

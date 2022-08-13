@@ -28,6 +28,7 @@ import net.minecraft.world.gen.stateprovider.NoiseBlockStateProvider;
 public class AmethystVeinFeature extends Feature<AmethystVeinFeatureConfig> {
     private static final Block[] AMETHYST_BUDS = {Blocks.SMALL_AMETHYST_BUD, Blocks.MEDIUM_AMETHYST_BUD, Blocks.LARGE_AMETHYST_BUD};
     private static final BlockStateProvider OUTLINE_STATE_PROVIDER = new NoiseBlockStateProvider(956016019L, new NoiseParameters(1, 1), 4f, List.of(Blocks.CALCITE.getDefaultState(), Blocks.SMOOTH_BASALT.getDefaultState()));
+    private static final BlockStateProvider SUSPENDED_STATE_PROVIDER = new NoiseBlockStateProvider(326971689L, new NoiseParameters(1, 1), 0.25f, List.of(Blocks.AMETHYST_BLOCK.getDefaultState(), Blocks.CALCITE.getDefaultState()));
 
     public AmethystVeinFeature(Codec<AmethystVeinFeatureConfig> configCodec) {
         super(configCodec);
@@ -166,14 +167,17 @@ public class AmethystVeinFeature extends Feature<AmethystVeinFeatureConfig> {
         }
 
         ArrayList<Pair<BlockPos, Direction>> adjacentAir = new ArrayList<>();
+        BlockState state = undergroundOnly ? Blocks.AMETHYST_BLOCK.getDefaultState() : SUSPENDED_STATE_PROVIDER.getBlockState(random, pos);
+        
+        this.setBlockState(world, pos, state);
+
+        if (!state.isOf(Blocks.AMETHYST_BLOCK)) return;
 
         for (Direction dir : Direction.values()) {
             if (world.isAir(pos.offset(dir)) || world.isWater(pos.offset(dir))) {
                 adjacentAir.add(Pair.of(pos.offset(dir), dir));
             }
         }
-
-        this.setBlockState(world, pos, Blocks.AMETHYST_BLOCK.getDefaultState());
 
         while (adjacentAir.size() > 0) {
             int index = random.nextInt(adjacentAir.size());

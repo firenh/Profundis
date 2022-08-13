@@ -371,6 +371,12 @@ public class ProfundisPlacedFeatures {
         CountPlacementModifier.of(ConstantIntProvider.create(6)), 
         SquarePlacementModifier.of(), 
         PlacedFeatures.BOTTOM_TO_120_RANGE, 
+        EnvironmentScanPlacementModifier.of(
+            Direction.UP, 
+            BlockPredicate.solid(), 
+            BlockPredicate.IS_AIR, 
+            12
+        ),
         BiomePlacementModifier.of()
     );
 

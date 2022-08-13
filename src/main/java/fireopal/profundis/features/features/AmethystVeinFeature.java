@@ -27,8 +27,23 @@ import net.minecraft.world.gen.stateprovider.NoiseBlockStateProvider;
 
 public class AmethystVeinFeature extends Feature<AmethystVeinFeatureConfig> {
     private static final Block[] AMETHYST_BUDS = {Blocks.SMALL_AMETHYST_BUD, Blocks.MEDIUM_AMETHYST_BUD, Blocks.LARGE_AMETHYST_BUD};
-    private static final BlockStateProvider OUTLINE_STATE_PROVIDER = new NoiseBlockStateProvider(956016019L, new NoiseParameters(1, 1), 4f, List.of(Blocks.CALCITE.getDefaultState(), Blocks.SMOOTH_BASALT.getDefaultState()));
-    private static final BlockStateProvider SUSPENDED_STATE_PROVIDER = new NoiseBlockStateProvider(326971689L, new NoiseParameters(1, 1), 0.25f, List.of(Blocks.AMETHYST_BLOCK.getDefaultState(), Blocks.CALCITE.getDefaultState()));
+    private static final BlockStateProvider OUTLINE_STATE_PROVIDER = new NoiseBlockStateProvider(956016019L, new NoiseParameters(1, 1), 0.25f, List.of(Blocks.CALCITE.getDefaultState(), Blocks.SMOOTH_BASALT.getDefaultState()));
+    private static final BlockStateProvider SUSPENDED_STATE_PROVIDER = new NoiseBlockStateProvider(326971689L, new NoiseParameters(1, 1), 0.025f, List.of(
+        Blocks.AMETHYST_BLOCK.getDefaultState(), 
+        Blocks.CALCITE.getDefaultState(),
+        Blocks.AMETHYST_BLOCK.getDefaultState(), 
+        Blocks.CALCITE.getDefaultState(),
+        Blocks.AMETHYST_BLOCK.getDefaultState(), 
+        Blocks.CALCITE.getDefaultState(),
+        Blocks.AMETHYST_BLOCK.getDefaultState(), 
+        Blocks.CALCITE.getDefaultState(),
+        Blocks.CALCITE.getDefaultState(),
+        Blocks.CALCITE.getDefaultState(),
+        Blocks.CALCITE.getDefaultState(),
+        Blocks.CALCITE.getDefaultState(),
+        Blocks.CALCITE.getDefaultState(),
+        Blocks.CALCITE.getDefaultState()
+    ));
 
     public AmethystVeinFeature(Codec<AmethystVeinFeatureConfig> configCodec) {
         super(configCodec);
@@ -109,7 +124,7 @@ public class AmethystVeinFeature extends Feature<AmethystVeinFeatureConfig> {
         while (iter.hasNext()) {
             BlockPos pos = iter.next();
 
-            if (undergroundOnly && world.isAir(pos)) {
+            if (undergroundOnly && (!world.getBlockState(pos).isOpaque())) {
                 continue;
             }
 

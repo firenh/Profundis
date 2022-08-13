@@ -27,6 +27,7 @@ import net.minecraft.world.gen.placementmodifier.EnvironmentScanPlacementModifie
 import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.PlacementModifier;
 import net.minecraft.world.gen.placementmodifier.RandomOffsetPlacementModifier;
+import net.minecraft.world.gen.placementmodifier.RarityFilterPlacementModifier;
 import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.SurfaceThresholdFilterPlacementModifier;
 
@@ -347,6 +348,38 @@ public class ProfundisPlacedFeatures {
                 YOffset.aboveBottom(0), YOffset.aboveBottom(120)
             )
         )
+    );
+
+    public static final RegistryEntry<PlacedFeature> AMETHYST_VEINS = register("amethyst_veins", 
+        ProfundisConfiguredFeatures.AMETHYST_VEIN,
+        CountPlacementModifier.of(ConstantIntProvider.create(48)), 
+        SquarePlacementModifier.of(), 
+        PlacedFeatures.BOTTOM_TO_120_RANGE, 
+        BiomePlacementModifier.of()
+    );
+
+    public static final RegistryEntry<PlacedFeature> AMETHYST_VEINS_LARGE = register("amethyst_veins_large", 
+        ProfundisConfiguredFeatures.AMETHYST_VEIN_LARGE,
+        CountPlacementModifier.of(ConstantIntProvider.create(6)), 
+        SquarePlacementModifier.of(), 
+        PlacedFeatures.BOTTOM_TO_120_RANGE, 
+        BiomePlacementModifier.of()
+    );
+
+    public static final RegistryEntry<PlacedFeature> AMETHYST_VEINS_AIR = register("amethyst_veins_air", 
+        ProfundisConfiguredFeatures.AMETHYST_VEIN_AIR,
+        CountPlacementModifier.of(ConstantIntProvider.create(6)), 
+        SquarePlacementModifier.of(), 
+        PlacedFeatures.BOTTOM_TO_120_RANGE, 
+        BiomePlacementModifier.of()
+    );
+
+    public static final RegistryEntry<PlacedFeature> AMETHYST_GEODE_AMETHYST_CAVES = register("amethyst_geode_amethyst_caves", 
+        UndergroundConfiguredFeatures.AMETHYST_GEODE, 
+        RarityFilterPlacementModifier.of(24), 
+        SquarePlacementModifier.of(), 
+        HeightRangePlacementModifier.uniform(YOffset.aboveBottom(6), YOffset.fixed(64)), 
+        BiomePlacementModifier.of()
     );
 
     private static List<PlacementModifier> modifiers(PlacementModifier countModifier, PlacementModifier heightModifier) {

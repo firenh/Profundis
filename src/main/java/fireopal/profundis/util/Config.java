@@ -28,6 +28,7 @@ public class Config {
     public boolean generateFrozenCaves = true;
     public boolean generateMushroomCaves = true;
     public boolean generateMoltenCaves = true;
+    public boolean generateAmethystCaves = true;
     public Debug debug = new Debug();
 
     // public Advanced advancedSettings = new Advanced();
@@ -45,7 +46,7 @@ public class Config {
     }
 
     public static class Debug {
-        public boolean enableMultinoiseCommand = false;
+        // public boolean enableMultinoiseCommand = false;
     }
 
     public static Config init() {

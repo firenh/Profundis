@@ -15,7 +15,8 @@ public class ProfundisBiomeKeys {
     public static final RegistryKey<Biome> FROZEN_CAVES = register("frozen_caves");
     public static final RegistryKey<Biome> MUSHROOM_CAVES = register("mushroom_caves");
     public static final RegistryKey<Biome> MOLTEN_CAVES = register("molten_caves");
-
+    public static final RegistryKey<Biome> AMETHYST_CAVES = register("amethyst_caves");
+ 
     public static final List<RegistryKey<Biome>> BIOMES = List.of(
         FROZEN_CAVES,
         MUSHROOM_CAVES,

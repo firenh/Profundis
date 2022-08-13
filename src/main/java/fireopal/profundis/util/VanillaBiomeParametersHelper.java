@@ -20,6 +20,7 @@ public class VanillaBiomeParametersHelper {
         if (biome.getValue().equals(ProfundisBiomeKeys.FROZEN_CAVES.getValue()) && Profundis.getConfig().generateFrozenCaves) bl = true;
         else if (biome.getValue().equals(ProfundisBiomeKeys.MUSHROOM_CAVES.getValue()) && Profundis.getConfig().generateMushroomCaves) bl = true;
         else if (biome.getValue().equals(ProfundisBiomeKeys.MOLTEN_CAVES.getValue()) && Profundis.getConfig().generateMoltenCaves) bl = true;
+        else if (biome.getValue().equals(ProfundisBiomeKeys.AMETHYST_CAVES.getValue()) && Profundis.getConfig().generateAmethystCaves) bl = true;
 
         if (bl) {
             parameters.accept(Pair.of(MultiNoiseUtil.createNoiseHypercube(temperature, humidity, continentalness, erosion, depth, weirdness, offset), biome));

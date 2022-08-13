@@ -1,5 +1,6 @@
 package fireopal.profundis.biomes;
 
+import fireopal.profundis.biomes.biomes.AmethystCavesBiome;
 import fireopal.profundis.biomes.biomes.FrozenCavesBiome;
 import fireopal.profundis.biomes.biomes.MoltenCavesBiome;
 import fireopal.profundis.biomes.biomes.MushroomCavesBiome;
@@ -12,6 +13,7 @@ public class ProfundisBiomes {
     public static final Biome FROZEN_CAVES = FrozenCavesBiome.create();
     public static final Biome MUSHROOM_CAVES = MushroomCavesBiome.create();
     public static final Biome MOLTEN_CAVES = MoltenCavesBiome.create();
+    public static final Biome AMETHYST_CAVES = AmethystCavesBiome.create();
 
     private static void register(RegistryKey<Biome> key, Biome biome) {
         Registry.register(BuiltinRegistries.BIOME, key.getValue(), biome);
@@ -21,5 +23,6 @@ public class ProfundisBiomes {
         register(ProfundisBiomeKeys.FROZEN_CAVES, FROZEN_CAVES);
         register(ProfundisBiomeKeys.MUSHROOM_CAVES, MUSHROOM_CAVES);
         register(ProfundisBiomeKeys.MOLTEN_CAVES, MOLTEN_CAVES);
+        register(ProfundisBiomeKeys.AMETHYST_CAVES, AMETHYST_CAVES);
     }
 }

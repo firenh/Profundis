@@ -3,6 +3,7 @@ package fireopal.profundis.features;
 import java.util.List;
 
 import fireopal.profundis.Profundis;
+import fireopal.profundis.features.features.config.AmethystVeinFeatureConfig;
 import fireopal.profundis.features.features.config.CavePillarFeatureConfig;
 import fireopal.profundis.features.features.config.CaveSurfaceFeatureConfig;
 import fireopal.profundis.features.features.config.IcicleFeatureConfig;
@@ -383,6 +384,36 @@ public class ProfundisConfiguredFeatures {
             ConstantIntProvider.ZERO, 
             UniformIntProvider.create(2, 7), 
             PlacedFeatures.createEntry(NO_OP)
+        )
+    );
+
+    public static final RegistryEntry<ConfiguredFeature<?, ?>> AMETHYST_VEIN = register("amethyst_vein", 
+        ProfundisFeatures.AMETHYST_VEIN_FEATURE,
+        new AmethystVeinFeatureConfig(
+            true,
+            ConstantIntProvider.create(2), 
+            ConstantIntProvider.create(16), 
+            UniformIntProvider.create(5, 10)
+        )
+    );
+
+    public static final RegistryEntry<ConfiguredFeature<?, ?>> AMETHYST_VEIN_LARGE = register("amethyst_vein_large", 
+        ProfundisFeatures.AMETHYST_VEIN_FEATURE,
+        new AmethystVeinFeatureConfig(
+            true,
+            UniformIntProvider.create(4, 5), 
+            ConstantIntProvider.create(16), 
+            UniformIntProvider.create(5, 10)
+        )
+    );
+
+    public static final RegistryEntry<ConfiguredFeature<?, ?>> AMETHYST_VEIN_AIR = register("amethyst_vein_air", 
+        ProfundisFeatures.AMETHYST_VEIN_FEATURE,
+        new AmethystVeinFeatureConfig(
+            false,
+            ConstantIntProvider.create(2),
+            ConstantIntProvider.create(16), 
+            UniformIntProvider.create(5, 10)
         )
     );
 }

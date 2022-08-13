@@ -105,6 +105,17 @@ public class ProfundisCaveBiomes {
             ParameterRange.of(0.8f, 1.0f),
             0f,
             ProfundisBiomeKeys.MOLTEN_CAVES
+        ),
+
+        CaveBiome.of(
+            DEFAULT_PARAMETER,
+            DEFAULT_PARAMETER,
+            ParameterRange.of(-0.3f, 0f),
+            ParameterRange.of(-1f, 0f),
+            ALL_HEIGHT_RANGE,
+            ParameterRange.of(-1.0f, -0.8f),
+            0f,
+            ProfundisBiomeKeys.AMETHYST_CAVES
         )
     );
 }

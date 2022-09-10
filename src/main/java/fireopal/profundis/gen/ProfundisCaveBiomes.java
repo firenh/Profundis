@@ -5,14 +5,13 @@ import com.google.common.collect.ImmutableList;
 import fireopal.profundis.biomes.ProfundisBiomeKeys;
 import net.minecraft.util.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.source.util.MultiNoiseUtil; 
+import net.minecraft.world.biome.source.util.MultiNoiseUtil;
 import net.minecraft.world.biome.source.util.MultiNoiseUtil.ParameterRange;
 
+/**
+ * {@linkplain net.minecraft.world.biome.source.util.VanillaBiomeParameters}
+ */
 public class ProfundisCaveBiomes {
-    /**
-     * {@linkplain net.minecraft.world.biome.source.util.VanillaBiomeParameters}
-     */
-
 
     public static class CaveBiome {
         public final ParameterRange temperature, humidity, continentalness, erosion, depth, weirdness;
@@ -26,7 +25,7 @@ public class ProfundisCaveBiomes {
             this.erosion = erosion;
             this.depth = depth;
             this.weirdness = weirdness;
-            this.offset = offset; 
+            this.offset = offset;
             this.biome = biome;
         }
 
@@ -49,62 +48,62 @@ public class ProfundisCaveBiomes {
      *      weirdness,
      *      offset
      *      biome
-     */ 
+     */
 
     public final static ImmutableList<CaveBiome> defaultCaveBiomes = ImmutableList.of(
-        CaveBiome.of(
-            ParameterRange.of(-1.0f, -0.6f),
-            DEFAULT_PARAMETER,
-            DEFAULT_PARAMETER,
-            DEFAULT_PARAMETER,
-            ALL_HEIGHT_RANGE,
-            ParameterRange.of(0.7f, 1.0f),
-            0f,
-            ProfundisBiomeKeys.FROZEN_CAVES
-        ),
+            CaveBiome.of(
+                    ParameterRange.of(-1.0f, -0.6f),
+                    DEFAULT_PARAMETER,
+                    DEFAULT_PARAMETER,
+                    DEFAULT_PARAMETER,
+                    ALL_HEIGHT_RANGE,
+                    ParameterRange.of(0.7f, 1.0f),
+                    0f,
+                    ProfundisBiomeKeys.FROZEN_CAVES
+            ),
 
-        CaveBiome.of(
-            ParameterRange.of(-1.0f, -0.6f),
-            DEFAULT_PARAMETER,
-            DEFAULT_PARAMETER,
-            DEFAULT_PARAMETER,
-            ALL_HEIGHT_RANGE,
-            ParameterRange.of(-1.0f, -0.7f),
-            0f,
-            ProfundisBiomeKeys.FROZEN_CAVES
-        ),
+            CaveBiome.of(
+                    ParameterRange.of(-1.0f, -0.6f),
+                    DEFAULT_PARAMETER,
+                    DEFAULT_PARAMETER,
+                    DEFAULT_PARAMETER,
+                    ALL_HEIGHT_RANGE,
+                    ParameterRange.of(-1.0f, -0.7f),
+                    0f,
+                    ProfundisBiomeKeys.FROZEN_CAVES
+            ),
 
-        CaveBiome.of(
-            ParameterRange.of(-0.15f, 0.2f),
-            ParameterRange.of(0.3375f, 1.0f),
-            ParameterRange.of(0f, 0.35f),
-            DEFAULT_PARAMETER,
-            ALL_HEIGHT_RANGE,
-            ParameterRange.of(0.7f, 1.0f),
-            0f,
-            ProfundisBiomeKeys.MUSHROOM_CAVES
-        ),
+            CaveBiome.of(
+                    ParameterRange.of(-0.15f, 0.2f),
+                    ParameterRange.of(0.3375f, 1.0f),
+                    ParameterRange.of(0f, 0.35f),
+                    DEFAULT_PARAMETER,
+                    ALL_HEIGHT_RANGE,
+                    ParameterRange.of(0.7f, 1.0f),
+                    0f,
+                    ProfundisBiomeKeys.MUSHROOM_CAVES
+            ),
 
-        CaveBiome.of(
-            ParameterRange.of(-0.15f, 0.2f),
-            ParameterRange.of(0.3375f, 1.0f),
-            ParameterRange.of(0f, 0.35f),
-            DEFAULT_PARAMETER,
-            ALL_HEIGHT_RANGE,
-            ParameterRange.of(-1.0f, -0.7f),
-            0f,
-            ProfundisBiomeKeys.MUSHROOM_CAVES
-        ),
+            CaveBiome.of(
+                    ParameterRange.of(-0.15f, 0.2f),
+                    ParameterRange.of(0.3375f, 1.0f),
+                    ParameterRange.of(0f, 0.35f),
+                    DEFAULT_PARAMETER,
+                    ALL_HEIGHT_RANGE,
+                    ParameterRange.of(-1.0f, -0.7f),
+                    0f,
+                    ProfundisBiomeKeys.MUSHROOM_CAVES
+            ),
 
-        CaveBiome.of(
-            DEFAULT_PARAMETER,
-            DEFAULT_PARAMETER,
-            ParameterRange.of(0.4f, 0.5f),
-            DEFAULT_PARAMETER,
-            ALL_HEIGHT_RANGE,
-            ParameterRange.of(0.8f, 1.0f),
-            0f,
-            ProfundisBiomeKeys.MOLTEN_CAVES
-        )
+            CaveBiome.of(
+                    DEFAULT_PARAMETER,
+                    DEFAULT_PARAMETER,
+                    ParameterRange.of(0.4f, 0.5f),
+                    DEFAULT_PARAMETER,
+                    ALL_HEIGHT_RANGE,
+                    ParameterRange.of(0.8f, 1.0f),
+                    0f,
+                    ProfundisBiomeKeys.MOLTEN_CAVES
+            )
     );
 }

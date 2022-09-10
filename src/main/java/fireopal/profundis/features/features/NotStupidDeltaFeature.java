@@ -64,7 +64,7 @@ public class NotStupidDeltaFeature extends DeltaFeature {
         if (BLOCKS.contains(blockState.getBlock())) {
             return false;
         }
-    
+
         for (Direction direction : DIRECTIONS) {
             BlockState replaceBlockstate = world.getBlockState(pos.offset(direction));
             boolean bl = replaceBlockstate.isOf(config.getContents().getBlock()) || (replaceBlockstate.isFullCube(world, pos));

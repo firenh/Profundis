@@ -28,7 +28,7 @@ public class CavePillarFeature extends Feature<CavePillarFeatureConfig> {
         StructureWorldAccess world = context.getWorld();
         Random random = context.getRandom();
         CavePillarFeatureConfig config = context.getConfig();
-        
+
         BlockState innerState = config.innerState();
         BlockState outerState = config.outerState();
         IntProvider lengthOfEnds = config.lengthOfEnds();

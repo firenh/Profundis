@@ -13,10 +13,10 @@ import net.minecraft.world.gen.surfacebuilder.MaterialRules.BiomeMaterialConditi
 @Mixin(BiomeMaterialCondition.class)
 public interface BiomeMaterialConditionInvoker {
     @Accessor
-    public List<RegistryKey<Biome>> getField_36414();
+    List<RegistryKey<Biome>> getField_36414();
 
     @Invoker("<init>")
-    public static BiomeMaterialCondition _init_(List<RegistryKey<Biome>> biomes) {
+    static BiomeMaterialCondition _init_(List<RegistryKey<Biome>> biomes) {
         throw new AssertionError();
     }
 }

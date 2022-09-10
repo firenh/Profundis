@@ -33,7 +33,7 @@ public class IcicleFeature extends Feature<IcicleFeatureConfig> {
         BlockState innerState = config.innerState();
         BlockState outerState = config.outerState();
 
-        spread = spread < 16 ? spread : 16;
+        spread = Math.min(spread, 16);
 
         if (!world.isAir(origin) || world.isAir(origin.up())) {
             return false;
@@ -48,7 +48,7 @@ public class IcicleFeature extends Feature<IcicleFeatureConfig> {
             mutable = mutable.add(random.nextInt(1 + spread * 2) - spread, 0, random.nextInt(1 + spread * 2) - spread).mutableCopy();
 
             boolean bl = false;
-            
+
             if (world.isAir(mutable) && world.isAir(mutable.up())) {
                 for (int i = 0; i < 3 && !bl; i += 1) {
                     mutable = mutable.add(0, 1, 0).mutableCopy();
@@ -68,11 +68,12 @@ public class IcicleFeature extends Feature<IcicleFeatureConfig> {
             }
 
             int nextSize = random.nextInt(size) + 1;
-            nextSize = nextSize > minSize ? nextSize : minSize;
+            nextSize = Math.max(nextSize, minSize);
 
-            if (!world.isAir(mutable.up()) && !world.isAir(mutable.up(2))) makeOneIcicle(world, mutable, nextSize, innerState, outerState, random);
+            if (!world.isAir(mutable.up()) && !world.isAir(mutable.up(2)))
+                makeOneIcicle(world, mutable, nextSize, innerState, outerState, random);
         }
-        
+
         return true;
     }
 
@@ -101,9 +102,10 @@ public class IcicleFeature extends Feature<IcicleFeatureConfig> {
 
         if (size > 3) {
             for (Direction d : DIRECTIONS) {
-                if (world.isAir(origin.offset(d)) && !world.isAir(origin.offset(d).up())) makeOneIcicle(world, origin.offset(d), random.nextInt(2 + (size / 3)), innerState, outerState, random);
+                if (world.isAir(origin.offset(d)) && !world.isAir(origin.offset(d).up()))
+                    makeOneIcicle(world, origin.offset(d), random.nextInt(2 + (size / 3)), innerState, outerState, random);
             }
         }
     }
-    
+
 }

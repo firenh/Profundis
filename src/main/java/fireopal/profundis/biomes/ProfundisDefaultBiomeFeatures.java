@@ -38,7 +38,7 @@ public class ProfundisDefaultBiomeFeatures {
         addGenericCaveFeatures(generationSettings);
 
         BiomeEffects.Builder biomeEffects = new BiomeEffects.Builder()
-            .skyColor(8364543).fogColor(12638463).waterFogColor(329011);
+                .skyColor(8364543).fogColor(12638463).waterFogColor(329011);
 
         Build.properties(biome, Precipitation.RAIN, Biome.Category.UNDERGROUND, 0f, 0.5f);
         return Build.finalize(biome, spawnSettings, generationSettings, biomeEffects);

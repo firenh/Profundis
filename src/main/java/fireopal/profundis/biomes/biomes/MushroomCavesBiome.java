@@ -23,17 +23,17 @@ public class MushroomCavesBiome {
         GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
         ProfundisDefaultBiomeFeatures.addBasicFeatures(generationSettings);
         ProfundisDefaultBiomeFeatures.addGenericCaveFeatures(generationSettings);
-        Generation.undergroundDecorationFeatures(generationSettings, 
-            ProfundisPlacedFeatures.MYCELIUM_CAVE_SURFACE,
-            ProfundisPlacedFeatures.CAVE_HUGE_MUSHROOMS,
-            ProfundisPlacedFeatures.MUSHROOM_CAVES_RED,
-            ProfundisPlacedFeatures.MUSHROOM_CAVES_BROWN,
-            ProfundisPlacedFeatures.SHELF_FUNGI
+        Generation.undergroundDecorationFeatures(generationSettings,
+                ProfundisPlacedFeatures.MYCELIUM_CAVE_SURFACE,
+                ProfundisPlacedFeatures.CAVE_HUGE_MUSHROOMS,
+                ProfundisPlacedFeatures.MUSHROOM_CAVES_RED,
+                ProfundisPlacedFeatures.MUSHROOM_CAVES_BROWN,
+                ProfundisPlacedFeatures.SHELF_FUNGI
         );
 
         BiomeEffects.Builder biomeEffects = new BiomeEffects.Builder()
-            .skyColor(7842047).fogColor(12638463).waterColor(4159204).waterFogColor(329011)
-            .music(MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_LUSH_CAVES));
+                .skyColor(7842047).fogColor(12638463).waterColor(4159204).waterFogColor(329011)
+                .music(MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_LUSH_CAVES));
 
         Build.properties(biome, Precipitation.RAIN, Biome.Category.UNDERGROUND, 0.9f, 1f);
         return Build.finalize(biome, spawnSettings, generationSettings, biomeEffects);

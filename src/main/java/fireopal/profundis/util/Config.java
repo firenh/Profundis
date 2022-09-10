@@ -18,7 +18,7 @@ import fireopal.profundis.Profundis;
 import fireopal.profundis.gen.ProfundisCaveBiomes;
 
 public class Config {
-    private static Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     //Config Default Values
 
@@ -31,7 +31,7 @@ public class Config {
     public Debug debug = new Debug();
 
     // public Advanced advancedSettings = new Advanced();
-    
+
     //~~~~~~~~
 
     public static class Advanced {
@@ -46,25 +46,26 @@ public class Config {
 
     public static class Debug {
         public boolean enableMultinoiseCommand = false;
+        public boolean logPlacements = false;
     }
 
     public static Config init() {
         Config config = null;
 
         try {
-            Path configPath = Paths.get("", "config", "profundis.json");
+            Path configPath = Paths.get("config/profundis.json");
 
             if (Files.exists(configPath)) {
                 config = gson.fromJson(
-                    new FileReader(configPath.toFile()),
-                    Config.class
+                        new FileReader(configPath.toFile()),
+                        Config.class
                 );
 
                 if (!config.CONFIG_VERSION_DO_NOT_TOUCH_PLS.equals(Profundis.VERSION.toString())) {
                     config.CONFIG_VERSION_DO_NOT_TOUCH_PLS = Profundis.VERSION.toString();
 
                     BufferedWriter writer = new BufferedWriter(
-                        new FileWriter(configPath.toFile())
+                            new FileWriter(configPath.toFile())
                     );
 
                     writer.write(gson.toJson(config));
@@ -76,7 +77,7 @@ public class Config {
                 Paths.get("", "config").toFile().mkdirs();
 
                 BufferedWriter writer = new BufferedWriter(
-                    new FileWriter(configPath.toFile())
+                        new FileWriter(configPath.toFile())
                 );
 
                 writer.write(gson.toJson(config));

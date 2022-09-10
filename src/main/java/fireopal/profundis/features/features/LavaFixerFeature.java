@@ -17,7 +17,7 @@ public class LavaFixerFeature extends Feature<DefaultFeatureConfig> {
         super(configCodec);
     }
 
-    private Direction[] directionsToCheck = {Direction.DOWN, Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST};
+    private final Direction[] directionsToCheck = {Direction.DOWN, Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST};
 
     @Override
     public boolean generate(FeatureContext<DefaultFeatureConfig> context) {
@@ -25,7 +25,7 @@ public class LavaFixerFeature extends Feature<DefaultFeatureConfig> {
         StructureWorldAccess world = context.getWorld();
         final int chunkSnappedX = chunkSnap(origin.getX());
         final int chunkSnappedZ = chunkSnap(origin.getZ());
-        
+
         BlockPos cursor = new BlockPos(chunkSnappedX, 120, chunkSnappedZ);
 
         // Profundis.LOGGER.info("lava fixer is doing stuff pt 1");
@@ -39,11 +39,11 @@ public class LavaFixerFeature extends Feature<DefaultFeatureConfig> {
 
                 for (Direction d : directionsToCheck) {
                     BlockPos checkingCursor = cursor.offset(d);
-                    if (!world.isAir(checkingCursor) 
+                    if (!world.isAir(checkingCursor)
                             && !(world.getBlockState(checkingCursor).isOf(Blocks.LAVA))
                             && !(world.getBlockState(checkingCursor).isSolidBlock(world, checkingCursor))
                             && !(world.getBlockState(checkingCursor).isOpaque())
-                        ) {
+                    ) {
                         // Profundis.LOGGER.info("fixed lava at " + cursor.getX() + "x, " + cursor.getY() + "y, " + cursor.getZ() + "z");
                         world.setBlockState(cursor, setState, 0);
                         fixed = true;
@@ -51,10 +51,9 @@ public class LavaFixerFeature extends Feature<DefaultFeatureConfig> {
                     }
                 }
 
-                if (fixed == false && world.isAir(cursor.down())) {
+                if (!fixed && world.isAir(cursor.down())) {
                     Profundis.LOGGER.info("fixed lava at " + cursor.getX() + "x, " + cursor.getY() + "y, " + cursor.getZ() + "z");
                     world.setBlockState(cursor, setState, 0);
-                    fixed = true;
                 }
             }
 
@@ -69,7 +68,7 @@ public class LavaFixerFeature extends Feature<DefaultFeatureConfig> {
 
         return true;
     }
-    
+
     private int chunkSnap(int input) {
         return (input / 16) * 16;
     }

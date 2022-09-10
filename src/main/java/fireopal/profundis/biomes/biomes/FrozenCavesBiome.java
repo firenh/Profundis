@@ -25,19 +25,19 @@ public class FrozenCavesBiome {
         ProfundisDefaultBiomeFeatures.addGenericCaveFeatures(generationSettings);
         Generation.undergroundOresFeatures(generationSettings, ProfundisPlacedFeatures.FROZEN_CAVES_REDSTONE_ORE);
         Generation.undergroundDecorationFeatures(generationSettings,
-            ProfundisPlacedFeatures.ICY_SURFACE,
-            ProfundisPlacedFeatures.LARGE_ICY_SURFACE,
-            ProfundisPlacedFeatures.SNOW_LAYER_CAVE,
-            ProfundisPlacedFeatures.FROZEN_AQUIFER,
-            ProfundisPlacedFeatures.FROZEN_LAVA_AQUIFER,
-            ProfundisPlacedFeatures.SMALL_ICICLES,
-            ProfundisPlacedFeatures.LARGE_ICICLES,
-            ProfundisPlacedFeatures.ICE_PILLAR
+                ProfundisPlacedFeatures.ICY_SURFACE,
+                ProfundisPlacedFeatures.LARGE_ICY_SURFACE,
+                ProfundisPlacedFeatures.SNOW_LAYER_CAVE,
+                ProfundisPlacedFeatures.FROZEN_AQUIFER,
+                ProfundisPlacedFeatures.FROZEN_LAVA_AQUIFER,
+                ProfundisPlacedFeatures.SMALL_ICICLES,
+                ProfundisPlacedFeatures.LARGE_ICICLES,
+                ProfundisPlacedFeatures.ICE_PILLAR
         );
 
         BiomeEffects.Builder biomeEffects = new BiomeEffects.Builder()
-            .skyColor(8364543).fogColor(12638463).waterColor(3750089).waterFogColor(329011)
-            .music(MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_FROZEN_PEAKS));
+                .skyColor(8364543).fogColor(12638463).waterColor(3750089).waterFogColor(329011)
+                .music(MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_FROZEN_PEAKS));
 
         Build.properties(biome, Precipitation.SNOW, Biome.Category.UNDERGROUND, 0f, 0.5f);
         return Build.finalize(biome, spawnSettings, generationSettings, biomeEffects);

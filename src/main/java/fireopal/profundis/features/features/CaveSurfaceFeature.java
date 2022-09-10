@@ -1,6 +1,5 @@
 package fireopal.profundis.features.features;
 
-import java.util.Iterator;
 import java.util.Random;
 
 import com.mojang.serialization.Codec;
@@ -55,20 +54,21 @@ public class CaveSurfaceFeature extends Feature<CaveSurfaceFeatureConfig> {
 
     private void makeOneCircle(BlockPos originalOrigin, BlockPos origin, Random random, StructureWorldAccess world, int size, int offset,
             BlockState blockState, float chance, boolean onSpecificBlockState, BlockState targetBlock, boolean onlyOnBaseStoneOverworld) {
-        Iterator<BlockPos> iterator = BlockPos.iterateOutwards(origin, size, size, size).iterator();
 
-        while (iterator.hasNext()) {
-            BlockPos.Mutable mutable = iterator.next().mutableCopy();
+        for (BlockPos blockPos : BlockPos.iterateOutwards(origin, size, size, size)) {
+            BlockPos.Mutable mutable = blockPos.mutableCopy();
             BlockState onState = world.getBlockState(mutable);
 
             if (originalOrigin.isWithinDistance(origin, size)) {
                 if (!onSpecificBlockState) {
                     if (onState.isOpaque() && world.isAir(mutable.up()) && !onState.equals(blockState) && useBaseStoneOverworld(onlyOnBaseStoneOverworld, onState) && mutable.isWithinDistance(origin, size)) {
-                        if (random.nextFloat() <= chance) world.setBlockState(mutable.offset(Axis.Y, offset), blockState, 0);
+                        if (random.nextFloat() <= chance)
+                            world.setBlockState(mutable.offset(Axis.Y, offset), blockState, 0);
                     }
                 } else {
-                    if ((onState.equals(targetBlock) || onState == targetBlock) && world.isAir(mutable.up()) && mutable.isWithinDistance(origin, size)) {
-                        if (random.nextFloat() <= chance) world.setBlockState(mutable.offset(Axis.Y, offset), blockState, 0);
+                    if (onState.equals(targetBlock) && world.isAir(mutable.up()) && mutable.isWithinDistance(origin, size)) {
+                        if (random.nextFloat() <= chance)
+                            world.setBlockState(mutable.offset(Axis.Y, offset), blockState, 0);
                     }
                 }
             }
@@ -80,14 +80,10 @@ public class CaveSurfaceFeature extends Feature<CaveSurfaceFeatureConfig> {
     }
 
     private boolean useBaseStoneOverworld(boolean onlyOnBaseStoneOverworld, BlockState blockState) {
-        if (onlyOnBaseStoneOverworld == false) {
+        if (!onlyOnBaseStoneOverworld) {
             return true;
         }
 
-        if (blockState.isIn(BlockTags.BASE_STONE_OVERWORLD)) {
-            return true;
-        }
-
-        return false;
+        return blockState.isIn(BlockTags.BASE_STONE_OVERWORLD);
     } 
 }

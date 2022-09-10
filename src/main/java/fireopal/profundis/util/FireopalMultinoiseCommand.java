@@ -1,7 +1,5 @@
 package fireopal.profundis.util;
 
-import com.mojang.brigadier.builder.LiteralArgumentBuilder;
-
 import fireopal.profundis.Profundis;
 import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import net.minecraft.command.argument.BlockPosArgumentType;
@@ -19,15 +17,13 @@ public class FireopalMultinoiseCommand {
     public static void register() {
         if (!Profundis.getConfig().debug.enableMultinoiseCommand) return;
 
-        CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
-            dispatcher.register(
-                (LiteralArgumentBuilder<ServerCommandSource>) CommandManager.literal("multinoise").requires(source -> source.hasPermissionLevel(2))
-                    .then(CommandManager.argument("pos", BlockPosArgumentType.blockPos())
-                        .executes(context -> FireopalMultinoiseCommand.execute((ServerCommandSource)context.getSource(), BlockPosArgumentType.getLoadedBlockPos(context, "pos"))
-                    )
-                )
-            );
-        });
+        CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> dispatcher.register(
+                CommandManager.literal("multinoise").requires(source -> source.hasPermissionLevel(2))
+                        .then(CommandManager.argument("pos", BlockPosArgumentType.blockPos())
+                                .executes(context -> FireopalMultinoiseCommand.execute(context.getSource(), BlockPosArgumentType.getLoadedBlockPos(context, "pos"))
+                                )
+                        )
+        ));
     }
 
     public static int execute(ServerCommandSource source, BlockPos pos) {
@@ -36,7 +32,7 @@ public class FireopalMultinoiseCommand {
         MultiNoiseSampler sampler = chunkGenerator.getMultiNoiseSampler();
         NoiseValuePoint n = sampler.sample(pos.getX(), pos.getY(), pos.getZ());
 
-        LiteralText text = new LiteralText("The Multinoise values at " + pos.toString() + " are::\n C: " + MultiNoiseUtil.method_38666(n.continentalnessNoise()) + " E: " + MultiNoiseUtil.method_38666(n.erosionNoise()) + " T: " + MultiNoiseUtil.method_38666(n.temperatureNoise()) + " H: " + MultiNoiseUtil.method_38666(n.humidityNoise()) + " W: " + MultiNoiseUtil.method_38666(n.weirdnessNoise()));
+        LiteralText text = new LiteralText("The Multinoise values at " + pos + " are::\n C: " + MultiNoiseUtil.method_38666(n.continentalnessNoise()) + " E: " + MultiNoiseUtil.method_38666(n.erosionNoise()) + " T: " + MultiNoiseUtil.method_38666(n.temperatureNoise()) + " H: " + MultiNoiseUtil.method_38666(n.humidityNoise()) + " W: " + MultiNoiseUtil.method_38666(n.weirdnessNoise()));
 
         source.sendFeedback(text, false);
         return 0;

@@ -24,24 +24,24 @@ public class MoltenCavesBiome {
         ProfundisDefaultBiomeFeatures.addBasicFeatures(generationSettings);
         ProfundisDefaultBiomeFeatures.addGenericCaveFeatures(generationSettings);
         Generation.undergroundDecorationFeatures(generationSettings,
-            ProfundisPlacedFeatures.MOLTEN_CAVES_DELTA,
-            ProfundisPlacedFeatures.MAGMA_REPLACE_LAVA,
-            ProfundisPlacedFeatures.BASALT_PATCHES_LOWER,
-            ProfundisPlacedFeatures.BASALT_PATCHES_UPPER,
-            ProfundisPlacedFeatures.GRANITE_PEPPERS,
-            ProfundisPlacedFeatures.ANDESITE_PEPPERS,
-            ProfundisPlacedFeatures.MOLTEN_CAVES_BASALT_COLUMNS,
-            ProfundisPlacedFeatures.BASALT_PILLAR_MOLTEN_CAVES,
-            // ProfundisPlacedFeatures.LAVA_FIXER,
-            ProfundisPlacedFeatures.INCREASED_UNDERWATER_MAGMA,
-            ProfundisPlacedFeatures.INCREASED_LAVA_SPRINGS,
-            ProfundisPlacedFeatures.MOLTEN_CAVES_IRON
-            
+                ProfundisPlacedFeatures.MOLTEN_CAVES_DELTA,
+                ProfundisPlacedFeatures.MAGMA_REPLACE_LAVA,
+                ProfundisPlacedFeatures.BASALT_PATCHES_LOWER,
+                ProfundisPlacedFeatures.BASALT_PATCHES_UPPER,
+                ProfundisPlacedFeatures.GRANITE_PEPPERS,
+                ProfundisPlacedFeatures.ANDESITE_PEPPERS,
+                ProfundisPlacedFeatures.MOLTEN_CAVES_BASALT_COLUMNS,
+                ProfundisPlacedFeatures.BASALT_PILLAR_MOLTEN_CAVES,
+                // ProfundisPlacedFeatures.LAVA_FIXER,
+                ProfundisPlacedFeatures.INCREASED_UNDERWATER_MAGMA,
+                ProfundisPlacedFeatures.INCREASED_LAVA_SPRINGS,
+                ProfundisPlacedFeatures.MOLTEN_CAVES_IRON
+
         );
 
         BiomeEffects.Builder biomeEffects = new BiomeEffects.Builder()
-            .skyColor(7842047).fogColor(12638463).waterColor(4159204).waterFogColor(329011)
-            .music(MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_DRIPSTONE_CAVES));
+                .skyColor(7842047).fogColor(12638463).waterColor(4159204).waterFogColor(329011)
+                .music(MusicType.createIngameMusic(SoundEvents.MUSIC_OVERWORLD_DRIPSTONE_CAVES));
 
         Build.properties(biome, Precipitation.RAIN, Biome.Category.UNDERGROUND, 0.9f, 1f);
         return Build.finalize(biome, spawnSettings, generationSettings, biomeEffects);

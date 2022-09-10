@@ -1,6 +1,5 @@
 package fireopal.profundis.features.features;
 
-import java.util.Iterator;
 import java.util.Random;
 
 import com.mojang.serialization.Codec;
@@ -31,62 +30,53 @@ public class ShelfFungiFeature extends Feature<ShelfFungiFeatureConfig> {
         BlockState underState = config.underState();
         int radius = config.radius().get(random);
         int iterations = config.iterations().get(random);
-        int radiusExt = (int)(radius * 1.5);
+        int radiusExt = (int) (radius * 1.5);
         int placements = 0;
 
         // this.setBlockState(world, origin, upperState);
 
         boolean hasPlaced = false;
 
-        Iterator<BlockPos> iter = BlockPos.iterateOutwards(origin, radiusExt, 0, radiusExt).iterator();
-
-        while (iter.hasNext()) {
-            BlockPos next = iter.next();
+        for (BlockPos next : BlockPos.iterateOutwards(origin, radiusExt, 0, radiusExt)) {
             // this.setBlockState(world, next, upperState);
 
             if (isValidLocation(origin, next, iterations, radius, random, world)) {
                 this.setBlockState(world, next, upperState);
                 hasPlaced = true;
                 placements += 1;
-                Profundis.LOGGER.info("placements: " + placements);
+                if (Profundis.getConfig().debug.logPlacements) Profundis.LOGGER.info("placements: " + placements);
             }
         }
 
         if (!hasPlaced) return false;
 
-        if (radius < 6) return hasPlaced;
+        if (radius < 6) return true;
 
-        Iterator<BlockPos> iter2 = BlockPos.iterateOutwards(origin.down(), radius, 0, radius).iterator();
-
-        while (iter2.hasNext()) {
-            BlockPos next = iter2.next();
+        for (BlockPos next : BlockPos.iterateOutwards(origin.down(), radius, 0, radius)) {
             if (isValidLocation(origin.down(), next, iterations, radius * 3 / 4, random, world)) {
                 this.setBlockState(world, next, underState);
             }
         }
 
-        if (radius < 8) return hasPlaced;
+        if (radius < 8) return true;
 
-        Iterator<BlockPos> iter3 = BlockPos.iterateOutwards(origin.up(), radius, 0, radius).iterator();
-
-        while (iter3.hasNext()) {
-            BlockPos next = iter3.next();
+        for (BlockPos next : BlockPos.iterateOutwards(origin.up(), radius, 0, radius)) {
             if (isValidLocation(origin.up(), next, iterations, radius * 2 / 3, random, world)) {
                 this.setBlockState(world, next, upperState);
             }
         }
 
-        return hasPlaced;
+        return true;
     }
 
     public boolean isValidLocation(BlockPos origin, BlockPos toPlaceAt, int iterations, int radius, Random random, StructureWorldAccess world) {
         BlockState placeAtState = world.getBlockState(toPlaceAt);
-        
+
         if (placeAtState.isOpaque()) {
             if (placeAtState.isIn(BlockTags.MOSS_REPLACEABLE)) {
                 if (
-                    world.getBlockState(toPlaceAt.up()).isOpaque()
-                    && world.getBlockState(toPlaceAt.down()).isOpaque()
+                        world.getBlockState(toPlaceAt.up()).isOpaque()
+                                && world.getBlockState(toPlaceAt.down()).isOpaque()
                 ) {
                     return false;
                 }
@@ -94,19 +84,18 @@ public class ShelfFungiFeature extends Feature<ShelfFungiFeatureConfig> {
                 return false;
             }
         }
-        
+
         // Profundis.LOGGER.info("radius: " + radius);
 
         double rad = 0;
         double theta = getAngle((toPlaceAt.getZ() - origin.getZ()), (toPlaceAt.getX() - origin.getX()));
         // Profundis.LOGGER.info("theta: " + theta);
-        
+
         for (int i = 1; i <= 1; i += 1) {
             // Profundis.LOGGER.info("rad: " + rad);
 
-            rad += (
-                0.1 * random.nextDouble() * Math.sin((2 * Math.PI * random.nextDouble()) + (theta * Math.ceil(0.5 / (random.nextDouble()))))
-            );
+            rad += (0.1 * random.nextDouble() * Math.sin((2 * Math.PI * random.nextDouble()) +
+                    (theta * Math.ceil(0.5 / (random.nextDouble())))));
         }
 
         return origin.isWithinDistance(toPlaceAt, (1 + rad) * radius);

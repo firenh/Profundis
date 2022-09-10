@@ -21,7 +21,7 @@ import net.minecraft.world.gen.feature.FeatureConfig;
 
 public class ProfundisFeatures {
     private static <C extends FeatureConfig, F extends Feature<C>> F register(String id, F feature) {
-        return (F)Registry.register(Registry.FEATURE, Profundis.id(id), feature);
+        return Registry.register(Registry.FEATURE, Profundis.id(id), feature);
     }
 
     public final static Feature<IcicleFeatureConfig> ICICLE_FEATURE;
@@ -45,5 +45,4 @@ public class ProfundisFeatures {
     public static void init() {
         new ProfundisFeatures();
     }
-
 }

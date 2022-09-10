@@ -3,8 +3,8 @@ package fireopal.profundis.util;
 public class FOModVersion {
     public final int major;
     public final int minor;
-    public final int patch;   
-    
+    public final int patch;
+
     public FOModVersion(int major, int minor, int patch) {
         this.major = major;
         this.minor = minor;
@@ -13,7 +13,7 @@ public class FOModVersion {
 
     public FOModVersion(String version) {
         boolean index0 = false;
-        int[] indexes = new int[2]; 
+        int[] indexes = new int[2];
 
         for (int i = 0; i < version.length(); i += 1) {
             if (version.charAt(i) == '.') {
@@ -31,12 +31,12 @@ public class FOModVersion {
         this.patch = substringToInt(version, indexes[1] + 1, version.length());
     }
 
-    private static final int substringToInt(String str, int index1, int index2) {    
+    private static int substringToInt(String str, int index1, int index2) {
         return Integer.parseInt(
-            str.substring(index1, index2)
+                str.substring(index1, index2)
         );
     }
-    
+
     public String toString() {
         return major + "." + minor + "." + patch;
     }

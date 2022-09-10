@@ -20,21 +20,21 @@ import fireopal.profundis.util.VanillaBiomeParametersHelper;
 
 @Mixin(VanillaBiomeParameters.class)
 public class MixinVanillaBiomeParameters {
-	@Inject(at = @At("HEAD"), method = "writeCaveBiomes(Ljava/util/function/Consumer;)V")
-	public void writeCaveBiomes(Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> parameters, CallbackInfo info) {
-		for (CaveBiome c : ProfundisCaveBiomes.defaultCaveBiomes) {
-			VanillaBiomeParametersHelper.writeCaveBiomeParameters(parameters,
-				c.temperature,
-				c.humidity,
-				c.continentalness,
-				c.erosion,
-				c.depth,
-				c.weirdness,
-				c.offset,
-				c.biome
-			);
-		}
+    @Inject(at = @At("HEAD"), method = "writeCaveBiomes(Ljava/util/function/Consumer;)V")
+    public void writeCaveBiomes(Consumer<Pair<MultiNoiseUtil.NoiseHypercube, RegistryKey<Biome>>> parameters, CallbackInfo info) {
+        for (CaveBiome c : ProfundisCaveBiomes.defaultCaveBiomes) {
+            VanillaBiomeParametersHelper.writeCaveBiomeParameters(parameters,
+                    c.temperature,
+                    c.humidity,
+                    c.continentalness,
+                    c.erosion,
+                    c.depth,
+                    c.weirdness,
+                    c.offset,
+                    c.biome
+            );
+        }
 
-		
-	}
+
+    }
 }

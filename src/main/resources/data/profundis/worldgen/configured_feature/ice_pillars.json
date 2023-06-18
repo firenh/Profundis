@@ -1,0 +1,23 @@
+{
+  "type": "profundis:cave_pillar_feature",
+  "config": {
+    "bottom_feature": {
+      "feature": "profundis:large_icy_surface",
+      "placement": []
+    },
+    "innerState": {
+      "Name": "minecraft:blue_ice"
+    },
+    "lengthOfEnds": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 7,
+        "min_inclusive": 2
+      }
+    },
+    "outerState": {
+      "Name": "minecraft:ice"
+    },
+    "sizeOfEnds": 0
+  }
+}

@@ -6,7 +6,8 @@ import com.mojang.serialization.Codec;
 
 import fireopal.profundis.features.features.config.CaveSurfaceFeatureConfig;
 import net.minecraft.block.BlockState;
-import net.minecraft.tag.BlockTags;
+import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction.Axis;
 import net.minecraft.util.math.random.Random;
@@ -32,7 +33,7 @@ public class CaveSurfaceFeature extends Feature<CaveSurfaceFeatureConfig> {
         float chance = config.chance();
         boolean onSpecificBlockState = config.onSpecificBlockState();
         int amountOfCircles = config.amountOfCircles().get(random);
-        BlockState targetBlock = config.targetBlock();
+        RuleTest targetBlock = config.targetBlock();
         boolean onlyOnBaseStoneOverworld = config.onlyOnBaseStoneOverworld();
         boolean generateManyCircles = config.generateManyCircles();
 
@@ -54,7 +55,7 @@ public class CaveSurfaceFeature extends Feature<CaveSurfaceFeatureConfig> {
     }
 
     private void makeOneCircle(BlockPos originalOrigin, BlockPos origin, Random random, StructureWorldAccess world, int size, int offset,
-            BlockState blockState, float chance, boolean onSpecificBlockState, BlockState targetBlock, boolean onlyOnBaseStoneOverworld) {
+            BlockState blockState, float chance, boolean onSpecificBlockState, RuleTest targetBlock, boolean onlyOnBaseStoneOverworld) {
         Iterator<BlockPos> iterator = BlockPos.iterateOutwards(origin, size, size, size).iterator();
 
         while (iterator.hasNext()) {
@@ -67,7 +68,7 @@ public class CaveSurfaceFeature extends Feature<CaveSurfaceFeatureConfig> {
                         if (random.nextFloat() <= chance) world.setBlockState(mutable.offset(Axis.Y, offset), blockState, 0);
                     }
                 } else {
-                    if ((onState.equals(targetBlock) || onState == targetBlock) && world.isAir(mutable.up()) && mutable.isWithinDistance(origin, size)) {
+                    if ((onState.equals(targetBlock) || targetBlock.test(blockState, random)) && world.isAir(mutable.up()) && mutable.isWithinDistance(origin, size)) {
                         if (random.nextFloat() <= chance) world.setBlockState(mutable.offset(Axis.Y, offset), blockState, 0);
                     }
                 }

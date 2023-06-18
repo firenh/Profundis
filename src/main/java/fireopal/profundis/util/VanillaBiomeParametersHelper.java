@@ -3,8 +3,9 @@ package fireopal.profundis.util;
 import com.mojang.datafixers.util.Pair;
 
 import fireopal.profundis.Profundis;
-import fireopal.profundis.biomes.ProfundisBiomeKeys;
-import net.minecraft.util.registry.RegistryKey;
+import fireopal.profundis.gen.ProfundisBiomeKeys;
+// import fireopal.profundis.biomes.ProfundisBiomeKeys;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.source.util.MultiNoiseUtil;
 import net.minecraft.world.biome.source.util.MultiNoiseUtil.NoiseHypercube;
@@ -20,6 +21,7 @@ public class VanillaBiomeParametersHelper {
         if (biome.getValue().equals(ProfundisBiomeKeys.FROZEN_CAVES.getValue()) && Profundis.getConfig().generateFrozenCaves) bl = true;
         else if (biome.getValue().equals(ProfundisBiomeKeys.MUSHROOM_CAVES.getValue()) && Profundis.getConfig().generateMushroomCaves) bl = true;
         else if (biome.getValue().equals(ProfundisBiomeKeys.MOLTEN_CAVES.getValue()) && Profundis.getConfig().generateMoltenCaves) bl = true;
+        else if (biome.getValue().equals(ProfundisBiomeKeys.AMETHYST_CAVES.getValue()) && Profundis.getConfig().generateAmethystCaves) bl = true;
 
         if (bl) {
             parameters.accept(Pair.of(MultiNoiseUtil.createNoiseHypercube(temperature, humidity, continentalness, erosion, depth, weirdness, offset), biome));

@@ -1,0 +1,34 @@
+{
+  "type": "profundis:cave_surface_feature",
+  "config": {
+    "amountOfCircles": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 5,
+        "min_inclusive": 3
+      }
+    },
+    "blockState": {
+      "Name": "minecraft:snow",
+      "Properties": {
+        "layers": "1"
+      }
+    },
+    "chance": 0.7,
+    "generateManyCircles": true,
+    "offset": 1,
+    "onSpecificBlock": false,
+    "onlyOnBaseStoneOverworld": true,
+    "size": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 16,
+        "min_inclusive": 6
+      }
+    },
+    "targetBlock": {
+      "predicate_type": "minecraft:block_match",
+      "block": "minecraft:air"
+    }
+  }
+}

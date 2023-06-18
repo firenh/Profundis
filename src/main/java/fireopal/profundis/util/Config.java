@@ -25,9 +25,12 @@ public class Config {
     public String CONFIG_VERSION_DO_NOT_TOUCH_PLS = Profundis.VERSION.toString();
 
     public boolean logWhenLoaded = true;
+    public String comment1 = "Enable or disable any cave biome individually. For now, the Black Caves are disabled by default, as it is experimental.";
     public boolean generateFrozenCaves = true;
     public boolean generateMushroomCaves = true;
     public boolean generateMoltenCaves = true;
+    public boolean generateAmethystCaves = true;
+    public boolean generateBlackCaves = false;
     public Debug debug = new Debug();
 
     // public Advanced advancedSettings = new Advanced();
@@ -35,17 +38,15 @@ public class Config {
     //~~~~~~~~
 
     public static class Advanced {
-        public String comment = "The following values control where the biomes appear. Do not touch unless you're an advanced user!";
-
         public List<ProfundisCaveBiomes.CaveBiome> caveBiomes = new ArrayList<>();
 
         public Advanced() {
-            caveBiomes.addAll(ProfundisCaveBiomes.defaultCaveBiomes);
+            caveBiomes.addAll(ProfundisCaveBiomes.DEFAULT_CAVE_BIOMES);
         }
     }
 
     public static class Debug {
-        public boolean enableMultinoiseCommand = false;
+        // public boolean enableMultinoiseCommand = false;
     }
 
     public static Config init() {

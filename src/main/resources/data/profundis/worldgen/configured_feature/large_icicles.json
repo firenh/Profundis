@@ -1,0 +1,32 @@
+{
+  "type": "profundis:icicle",
+  "config": {
+    "amount": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 8,
+        "min_inclusive": 4
+      }
+    },
+    "inner_state": {
+      "Name": "minecraft:packed_ice"
+    },
+    "outer_state": {
+      "Name": "minecraft:ice"
+    },
+    "size": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 16,
+        "min_inclusive": 7
+      }
+    },
+    "spread": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 12,
+        "min_inclusive": 8
+      }
+    }
+  }
+}

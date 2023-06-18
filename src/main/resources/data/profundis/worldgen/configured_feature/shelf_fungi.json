@@ -1,0 +1,53 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": {
+      "feature": "profundis:small_brown_shelf_fungi",
+      "placement": []
+    },
+    "features": [
+      {
+        "chance": 0.13333334,
+        "feature": {
+          "feature": "profundis:large_brown_shelf_fungi",
+          "placement": []
+        }
+      },
+      {
+        "chance": 0.26666668,
+        "feature": {
+          "feature": "profundis:small_brown_shelf_fungi",
+          "placement": []
+        }
+      },
+      {
+        "chance": 0.13333334,
+        "feature": {
+          "feature": "profundis:large_white_shelf_fungi",
+          "placement": []
+        }
+      },
+      {
+        "chance": 0.26666668,
+        "feature": {
+          "feature": "profundis:small_white_shelf_fungi",
+          "placement": []
+        }
+      },
+      {
+        "chance": 0.06666667,
+        "feature": {
+          "feature": "profundis:large_red_shelf_fungi",
+          "placement": []
+        }
+      },
+      {
+        "chance": 0.13333334,
+        "feature": {
+          "feature": "profundis:small_red_shelf_fungi",
+          "placement": []
+        }
+      }
+    ]
+  }
+}

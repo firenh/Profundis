@@ -1,0 +1,15 @@
+{
+  "type": "profundis:amethyst_vein_feature",
+  "config": {
+    "radius": 2,
+    "range": 16,
+    "target_count": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 10,
+        "min_inclusive": 5
+      }
+    },
+    "underground_only": false
+  }
+}

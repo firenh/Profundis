@@ -9,12 +9,11 @@ import net.minecraft.sound.BiomeMoodSound;
 import net.minecraft.sound.MusicSound;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.registry.RegistryEntry;
+import  net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
-import net.minecraft.world.biome.Biome.Precipitation;
 import net.minecraft.world.biome.SpawnSettings.SpawnEntry;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.carver.ConfiguredCarver;
@@ -147,13 +146,13 @@ public class FireopalBiomeAPI_v1_2 {
         //Adds features to a specific Generation Step
         
         @SafeVarargs
-        public static void features(GenerationSettings.Builder generationSettings, GenerationStep.Feature generationStep, RegistryEntry<PlacedFeature>... placedFeatures) {
+        public static void features(GenerationSettings.LookupBackedBuilder generationSettings, GenerationStep.Feature generationStep, RegistryEntry<PlacedFeature>... placedFeatures) {
             for (RegistryEntry<PlacedFeature> p : placedFeatures) {
                 generationSettings.feature(generationStep, p);
             }
         }
 
-        public static void features(GenerationSettings.Builder generationSettings, GenerationStep.Feature generationStep, List<RegistryEntry<PlacedFeature>> placedFeatures) {
+        public static void features(GenerationSettings.LookupBackedBuilder generationSettings, GenerationStep.Feature generationStep, List<RegistryEntry<PlacedFeature>> placedFeatures) {
             for (RegistryEntry<PlacedFeature> p : placedFeatures) {
                 generationSettings.feature(generationStep, p);
             }
@@ -179,52 +178,52 @@ public class FireopalBiomeAPI_v1_2 {
         //Adds features to set generation steps
 
         @SafeVarargs
-        public static void lakeFeatures(GenerationSettings.Builder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
+        public static void lakeFeatures(GenerationSettings.LookupBackedBuilder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
             features(generationSettings, GenerationStep.Feature.LAKES, placedFeatures);
         }
         
         @SafeVarargs
-        public static void localModificationFeatures(GenerationSettings.Builder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
+        public static void localModificationFeatures(GenerationSettings.LookupBackedBuilder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
             features(generationSettings, GenerationStep.Feature.LOCAL_MODIFICATIONS, placedFeatures);
         }
         
         @SafeVarargs
-        public static void rawGenerationFeatures(GenerationSettings.Builder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
+        public static void rawGenerationFeatures(GenerationSettings.LookupBackedBuilder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
             features(generationSettings, GenerationStep.Feature.RAW_GENERATION, placedFeatures);
         }
         
         @SafeVarargs
-        public static void strongholdFeatures(GenerationSettings.Builder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
+        public static void strongholdFeatures(GenerationSettings.LookupBackedBuilder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
             features(generationSettings, GenerationStep.Feature.STRONGHOLDS, placedFeatures);
         }
         
         @SafeVarargs
-        public static void surfaceStructureFeatures(GenerationSettings.Builder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
+        public static void surfaceStructureFeatures(GenerationSettings.LookupBackedBuilder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
             features(generationSettings, GenerationStep.Feature.SURFACE_STRUCTURES, placedFeatures);
         }
         
         @SafeVarargs
-        public static void topLayerModificationFeatures(GenerationSettings.Builder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
+        public static void topLayerModificationFeatures(GenerationSettings.LookupBackedBuilder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
             features(generationSettings, GenerationStep.Feature.TOP_LAYER_MODIFICATION, placedFeatures);
         }
         
         @SafeVarargs
-        public static void undergroundStructureFeatures(GenerationSettings.Builder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
+        public static void undergroundStructureFeatures(GenerationSettings.LookupBackedBuilder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
             features(generationSettings, GenerationStep.Feature.UNDERGROUND_DECORATION, placedFeatures);
         }
         
         @SafeVarargs
-        public static void undergroundOresFeatures(GenerationSettings.Builder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
+        public static void undergroundOresFeatures(GenerationSettings.LookupBackedBuilder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
             features(generationSettings, GenerationStep.Feature.UNDERGROUND_ORES, placedFeatures);
         }
         
         @SafeVarargs
-        public static void undergroundDecorationFeatures(GenerationSettings.Builder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
+        public static void undergroundDecorationFeatures(GenerationSettings.LookupBackedBuilder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
             features(generationSettings, GenerationStep.Feature.UNDERGROUND_STRUCTURES, placedFeatures);
         }
         
         @SafeVarargs
-        public static void vegetalDecorationFeatures(GenerationSettings.Builder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
+        public static void vegetalDecorationFeatures(GenerationSettings.LookupBackedBuilder generationSettings, RegistryEntry<PlacedFeature>... placedFeatures) {
             features(generationSettings, GenerationStep.Feature.VEGETAL_DECORATION, placedFeatures);
         }
 
@@ -262,19 +261,19 @@ public class FireopalBiomeAPI_v1_2 {
         }
 
         public static class BiomeSounds {
-            SoundEvent loopSound;
+            RegistryEntry<SoundEvent> loopSound;
             BiomeMoodSound moodSound;
             BiomeAdditionsSound additionsSound;
             MusicSound music;
 
-            public BiomeSounds(SoundEvent loopSound, BiomeMoodSound moodSound, BiomeAdditionsSound additionsSound, MusicSound music) {
+            public BiomeSounds(RegistryEntry<SoundEvent> loopSound, BiomeMoodSound moodSound, BiomeAdditionsSound additionsSound, MusicSound music) {
                 this.loopSound = loopSound;
                 this.moodSound = moodSound;
                 this.additionsSound = additionsSound;
                 this.music = music;
             }
 
-            public SoundEvent getLoopSound() {
+            public RegistryEntry<SoundEvent> getLoopSound() {
                 return loopSound;
             }
 
@@ -311,9 +310,10 @@ public class FireopalBiomeAPI_v1_2 {
     }
 
     public class Build {
-        public static void properties(Biome.Builder biome, Precipitation precipitation, float temperature, float downfall) {
+        public static void properties(Biome.Builder biome, boolean precipitation, float temperature, float downfall) {
             biome
                 .precipitation(precipitation)
+                // .category(category)
                 .temperature(temperature)
                 .downfall(downfall);
         }

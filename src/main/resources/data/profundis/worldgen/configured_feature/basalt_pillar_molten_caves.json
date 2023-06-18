@@ -1,0 +1,29 @@
+{
+  "type": "profundis:cave_pillar_feature",
+  "config": {
+    "bottom_feature": {
+      "feature": "profundis:no_op",
+      "placement": []
+    },
+    "innerState": {
+      "Name": "minecraft:basalt",
+      "Properties": {
+        "axis": "y"
+      }
+    },
+    "lengthOfEnds": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 7,
+        "min_inclusive": 2
+      }
+    },
+    "outerState": {
+      "Name": "minecraft:basalt",
+      "Properties": {
+        "axis": "y"
+      }
+    },
+    "sizeOfEnds": 0
+  }
+}

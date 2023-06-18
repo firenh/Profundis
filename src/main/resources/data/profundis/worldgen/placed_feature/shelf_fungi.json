@@ -1,0 +1,39 @@
+{
+  "feature": "profundis:shelf_fungi",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": 20
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "max_inclusive": {
+          "absolute": 256
+        },
+        "min_inclusive": {
+          "above_bottom": 0
+        }
+      }
+    },
+    {
+      "type": "minecraft:environment_scan",
+      "allowed_search_condition": {
+        "type": "minecraft:matching_block_tag",
+        "tag": "minecraft:base_stone_overworld"
+      },
+      "direction_of_search": "down",
+      "max_steps": 14,
+      "target_condition": {
+        "type": "minecraft:true"
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

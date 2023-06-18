@@ -1,0 +1,36 @@
+{
+  "type": "profundis:cave_surface_feature",
+  "config": {
+    "amountOfCircles": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 4,
+        "min_inclusive": 2
+      }
+    },
+    "blockState": {
+      "Name": "minecraft:magma_block"
+    },
+    "chance": 0.35,
+    "generateManyCircles": true,
+    "offset": 0,
+    "onSpecificBlock": true,
+    "onlyOnBaseStoneOverworld": false,
+    "size": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 17,
+        "min_inclusive": 13
+      }
+    },
+    "targetBlock": {
+      "predicate_type": "minecraft:blockstate_match",
+      "block_state": {
+        "Name": "minecraft:lava",
+        "Properties": {
+          "level": "0"
+        }
+      }
+    }
+  }
+}

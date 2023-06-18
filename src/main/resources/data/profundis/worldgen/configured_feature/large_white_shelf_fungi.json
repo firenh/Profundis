@@ -1,0 +1,41 @@
+{
+  "type": "profundis:shelf_fungi_feature",
+  "config": {
+    "iterations": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 7,
+        "min_inclusive": 3
+      }
+    },
+    "radius": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 10,
+        "min_inclusive": 4
+      }
+    },
+    "underState": {
+      "Name": "minecraft:mushroom_stem",
+      "Properties": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "true",
+        "west": "false"
+      }
+    },
+    "upperState": {
+      "Name": "minecraft:mushroom_stem",
+      "Properties": {
+        "down": "false",
+        "east": "true",
+        "north": "true",
+        "south": "true",
+        "up": "true",
+        "west": "true"
+      }
+    }
+  }
+}

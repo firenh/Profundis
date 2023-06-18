@@ -1,0 +1,30 @@
+{
+  "type": "profundis:cave_surface_feature",
+  "config": {
+    "amountOfCircles": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 5,
+        "min_inclusive": 3
+      }
+    },
+    "blockState": {
+      "Name": "minecraft:ice"
+    },
+    "chance": 1.0,
+    "generateManyCircles": false,
+    "offset": 0,
+    "onSpecificBlock": true,
+    "onlyOnBaseStoneOverworld": false,
+    "size": 16,
+    "targetBlock": {
+      "predicate_type": "minecraft:blockstate_match",
+      "block_state": {
+        "Name": "minecraft:water",
+        "Properties": {
+          "level": "0"
+        }
+      }
+    }
+  }
+}

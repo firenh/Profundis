@@ -4,12 +4,12 @@
   "version": "${version}",
 
   "name": "Profundis",
-  "description": "A world generation mod adding in three new underground biomes: the Frozen Caves, the Mushroom Caves, and the Molten Caves. This mod can work on the server without clients needing to download a mod!",
+  "description": "A world generation mod adding in four new underground biomes: the Frozen Caves, the Mushroom Caves, the Molten Caves, and the Amethyst Caves. This mod can work on the server without clients needing to download a mod!",
   "authors": [
     "FireNH"
   ],
   "contact": {
-    "homepage": "*",
+    "homepage": "https://github.com/firenh",
     "sources": "https://github.com/firenh/Profundis"
   },
 
@@ -27,13 +27,12 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.11.3",
-    "fabric": "*",
-    "minecraft": "1.19.x",
+    "fabricloader": ">=0.14.19",
+    "fabric-api": "*",
+    "minecraft": "~1.20.1",
     "java": ">=17"
   },
   "suggests": {
     "another-mod": "*"
-  },
-  "accessWidener": "profundis.accesswidener"
+  }
 }

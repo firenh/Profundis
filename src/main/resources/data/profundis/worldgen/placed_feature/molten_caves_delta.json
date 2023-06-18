@@ -1,0 +1,12 @@
+{
+  "feature": "profundis:molten_caves_delta",
+  "placement": [
+    {
+      "type": "minecraft:count_on_every_layer",
+      "count": 16
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

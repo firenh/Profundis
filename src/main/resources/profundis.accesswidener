@@ -1,6 +1,0 @@
-accessWidener	v1	named
-#
-# Accessing Lnet/minecraft/world/gen/surfacebuilder/MaterialRules$BiomeMaterialCondition;
-#            net.minecraft.world.gen.surfacebuilder.MaterialRules.BiomeMaterialCondition
-#
-accessible class net/minecraft/world/gen/surfacebuilder/MaterialRules$BiomeMaterialCondition

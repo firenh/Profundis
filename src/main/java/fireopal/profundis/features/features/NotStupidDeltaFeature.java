@@ -1,6 +1,5 @@
 package fireopal.profundis.features.features;
 
-
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 

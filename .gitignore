@@ -21,7 +21,6 @@ classes/
 .settings/
 .vscode/
 bin/
-javaOld/
 .classpath
 .project
 
@@ -32,3 +31,10 @@ javaOld/
 # fabric
 
 run/
+
+# java
+
+hs_err_*.log
+replay_*.log
+*.hprof
+*.jfr

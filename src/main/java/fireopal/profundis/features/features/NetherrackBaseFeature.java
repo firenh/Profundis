@@ -11,8 +11,9 @@ import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.util.registry.RegistryEntry;
-import net.minecraft.util.registry.RegistryEntryList;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.registry.entry.RegistryEntryList;
+import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
@@ -38,7 +39,7 @@ public class NetherrackBaseFeature extends Feature<NetherrackBaseFeatureConfig> 
         final int maxZ = origin.getZ() + radius;
         final BlockState topState = config.topState();
         final BlockState underState = config.underState();
-        final RegistryEntryList<Block> canPlaceThrough = config.canPlaceThrough();
+        final RuleTest canPlaceThrough = config.canPlaceThrough();
         final boolean sometimesUseUnderAsTop = config.sometimesUseUnderAsTop();
         final boolean isContained = config.contained();
 
@@ -62,7 +63,7 @@ public class NetherrackBaseFeature extends Feature<NetherrackBaseFeatureConfig> 
         return hasPlaced;
     }
 
-    private boolean iterateOnce(BlockPos pos, BlockPos origin, int radius, int height, BlockState topState, BlockState underState, RegistryEntryList<Block> canPlaceThrough, boolean sometimesUseUnderAsTop, StructureWorldAccess world, Random random, boolean isContained) {
+    private boolean iterateOnce(BlockPos pos, BlockPos origin, int radius, int height, BlockState topState, BlockState underState, RuleTest canPlaceThrough, boolean sometimesUseUnderAsTop, StructureWorldAccess world, Random random, boolean isContained) {
         // Thermorarium.LOGGER.info("Iter once");
         
         boolean hasPlaced = false;
@@ -77,7 +78,7 @@ public class NetherrackBaseFeature extends Feature<NetherrackBaseFeatureConfig> 
             // Thermorarium.LOGGER.info("Matching");
 
             // // Thermorarium.LOGGER.info("Adjusted: " + posMatcher.get());
-            boolean bl = generatePillarGoingDown(radius, height, posMatcher.get(), origin, topState, underState, canPlaceThrough, world, isContained);
+            boolean bl = generatePillarGoingDown(radius, height, posMatcher.get(), origin, topState, underState, canPlaceThrough, world, isContained, random);
             if (!hasPlaced) hasPlaced = bl;
             // Thermorarium.LOGGER.info("This spot: " + posMatcher.get());
 
@@ -87,7 +88,7 @@ public class NetherrackBaseFeature extends Feature<NetherrackBaseFeatureConfig> 
                 Optional<BlockPos> posMatcher2 = adjustWorldPosition(posMatcher.get().offset(d), 1 + (int) Math.ceil((float) height / 3.0f), world);
                 
                 if (posMatcher2.isPresent() && random.nextFloat() < (Math.sqrt(posMatcher2.get().getSquaredDistance(origin) / (double) radius))) {
-                    generatePillarGoingDown(radius, 1 + ((height + 3) / 3), posMatcher2.get(), origin, (sometimesUseUnderAsTop && random.nextBoolean() ? underState : topState), underState, canPlaceThrough, world, isContained);
+                    generatePillarGoingDown(radius, 1 + ((height + 3) / 3), posMatcher2.get(), origin, (sometimesUseUnderAsTop && random.nextBoolean() ? underState : topState), underState, canPlaceThrough, world, isContained, random);
                 }
             }
         }
@@ -136,7 +137,7 @@ public class NetherrackBaseFeature extends Feature<NetherrackBaseFeatureConfig> 
 
     private final Direction[] DIRECTIONS = {Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST};
 
-    private boolean generatePillarGoingDown(int maxRadius, int maxHeight, BlockPos target, BlockPos origin, BlockState topState, BlockState underState, RegistryEntryList<Block> canPlaceThrough, StructureWorldAccess world, boolean isContained) {
+    private boolean generatePillarGoingDown(int maxRadius, int maxHeight, BlockPos target, BlockPos origin, BlockState topState, BlockState underState, RuleTest canPlaceThrough, StructureWorldAccess world, boolean isContained, Random random) {
         // Thermorarium.LOGGER.info("Generating pillar");
         
         final double distanceToOrigin = Math.sqrt(target.getSquaredDistance(origin));
@@ -152,11 +153,7 @@ public class NetherrackBaseFeature extends Feature<NetherrackBaseFeatureConfig> 
             pos = target.down(i);
             BlockState stateAt = world.getBlockState(pos);
             
-            boolean bl = false;
-
-            for (RegistryEntry<Block> r : canPlaceThrough) {
-                if (stateAt.isOf(r.value())) bl = true;
-            }
+            boolean bl = canPlaceThrough.test(stateAt, random);
 
             if (!bl) break;
 

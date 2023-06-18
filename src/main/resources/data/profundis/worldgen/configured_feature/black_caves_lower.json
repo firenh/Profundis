@@ -1,0 +1,29 @@
+{
+    "type": "profundis:large_ore_feature",
+    "config": {
+        "targets": [
+            {
+                "target": {
+                    "predicate_type": "minecraft:block_match",
+                    "block": "minecraft:deepslate"
+                },
+                "state": {
+                    "Name": "minecraft:blackstone"
+                }
+            }
+        ],
+        "radius": {
+            "type": "minecraft:uniform",
+            "value": {
+                "min_inclusive": 10,
+                "max_inclusive": 16
+            }
+        },
+        "scale": 2,
+        "factor": 2,
+        "smearing": 2,
+        "value_range": 0.35,
+        "value_offset": 0,
+        "borders_air": true
+    }
+}

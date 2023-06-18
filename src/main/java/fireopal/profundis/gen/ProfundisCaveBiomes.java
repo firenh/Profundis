@@ -2,8 +2,8 @@ package fireopal.profundis.gen;
 
 import com.google.common.collect.ImmutableList;
 
-import fireopal.profundis.biomes.ProfundisBiomeKeys;
-import net.minecraft.util.registry.RegistryKey;
+// import fireopal.profundis.biomes.ProfundisBiomeKeys;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.source.util.MultiNoiseUtil; 
 import net.minecraft.world.biome.source.util.MultiNoiseUtil.ParameterRange;
@@ -51,7 +51,7 @@ public class ProfundisCaveBiomes {
      *      biome
      */ 
 
-    public final static ImmutableList<CaveBiome> defaultCaveBiomes = ImmutableList.of(
+    public final static ImmutableList<CaveBiome> DEFAULT_CAVE_BIOMES = ImmutableList.of(
         CaveBiome.of(
             ParameterRange.of(-1.0f, -0.6f),
             DEFAULT_PARAMETER,
@@ -105,6 +105,39 @@ public class ProfundisCaveBiomes {
             ParameterRange.of(0.8f, 1.0f),
             0f,
             ProfundisBiomeKeys.MOLTEN_CAVES
+        ),
+
+        CaveBiome.of(
+            DEFAULT_PARAMETER,
+            DEFAULT_PARAMETER,
+            ParameterRange.of(-0.3f, 0f),
+            ParameterRange.of(-1f, 0f),
+            ALL_HEIGHT_RANGE,
+            ParameterRange.of(-1.0f, -0.8f),
+            0f,
+            ProfundisBiomeKeys.AMETHYST_CAVES
+        ), 
+
+        CaveBiome.of(
+            DEFAULT_PARAMETER,
+            DEFAULT_PARAMETER,
+            ParameterRange.of(-0.3f, 0f),
+            ParameterRange.of(-1f, 0f),
+            ALL_HEIGHT_RANGE,
+            ParameterRange.of(0.8f, 1.0f),
+            0f,
+            ProfundisBiomeKeys.BLACK_CAVES
         )
+
+        // CaveBiome.of(
+        //     DEFAULT_PARAMETER,
+        //     ParameterRange.of(1.0f, 2.0f),
+        //     DEFAULT_PARAMETER,
+        //     DEFAULT_PARAMETER,
+        //     ALL_HEIGHT_RANGE,
+        //     DEFAULT_PARAMETER,
+        //     0f,
+        //     ProfundisBiomeKeys.FLORAL_LUSH_CAVES
+        // )
     );
 }

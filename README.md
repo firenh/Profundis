@@ -1,4 +1,4 @@
-<img src="https://github.com/firenh/Profundis/blob/1.19.x/images/mod-page-icon%20base%20cropped%201.4.png?raw=true" alt = "Profundis 1.5, a worldgen mod by FireNH"> 
+<img src="https://github.com/firenh/Profundis/blob/1.20.x/images/profundis_logo" alt = "Profundis 1.5, a worldgen mod by FireNH"> 
 
 <h2><center> A world generation mod adding in <b>four</b>* new underground biomes: <br>the Frozen Caves, the Mushroom Caves, the Molten Caves, and the <b>Amethyst Caves</b> </center></h2>
 

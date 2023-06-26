@@ -3,6 +3,8 @@
     "values": [
         "profundis:frozen_caves",
         "profundis:mushroom_caves",
-        "profundis:molten_caves"
+        "profundis:molten_caves",
+        "profundis:amethyst_caves",
+        "profundis:black_caves"
     ]
 }

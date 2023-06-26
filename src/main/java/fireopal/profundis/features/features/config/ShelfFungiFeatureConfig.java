@@ -7,11 +7,12 @@ import net.minecraft.block.BlockState;
 import net.minecraft.util.math.intprovider.IntProvider;
 import net.minecraft.world.gen.feature.FeatureConfig;
 
-public record ShelfFungiFeatureConfig(IntProvider radius, IntProvider iterations, BlockState upperState, BlockState underState) implements FeatureConfig {
+public record ShelfFungiFeatureConfig(IntProvider radius, IntProvider iterations, BlockState upperState, BlockState underState, boolean glowing) implements FeatureConfig {
     public static final Codec<ShelfFungiFeatureConfig> CODEC = RecordCodecBuilder.create(instance -> instance.group(
        IntProvider.VALUE_CODEC.fieldOf("radius").forGetter(ShelfFungiFeatureConfig::radius),
        IntProvider.VALUE_CODEC.fieldOf("iterations").forGetter(ShelfFungiFeatureConfig::iterations),
        BlockState.CODEC.fieldOf("upperState").forGetter(ShelfFungiFeatureConfig::upperState),
-       BlockState.CODEC.fieldOf("underState").forGetter(ShelfFungiFeatureConfig::underState)
+       BlockState.CODEC.fieldOf("underState").forGetter(ShelfFungiFeatureConfig::underState),
+       Codec.BOOL.fieldOf("glowing").forGetter(ShelfFungiFeatureConfig::glowing)
     ).apply(instance, instance.stable(ShelfFungiFeatureConfig::new)));
 }

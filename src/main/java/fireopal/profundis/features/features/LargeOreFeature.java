@@ -9,6 +9,7 @@ import fireopal.profundis.features.features.config.LargeOreFeatureConfig;
 import net.minecraft.block.BlockState;
 import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.noise.InterpolatedNoiseSampler;
 import net.minecraft.util.math.random.Random;
@@ -41,18 +42,22 @@ public class LargeOreFeature extends Feature<LargeOreFeatureConfig> {
         double valueOffset = config.valueOffset();
          boolean bordersAir = config.bordersAir();
 
+        ChunkPos originChunkPos = new ChunkPos(origin.getX() / 16, origin.getZ() / 16);
         InterpolatedNoiseSampler noise = new InterpolatedNoiseSampler(random, scale, scale, factor, factor, smearing);
 
         Iterator<BlockPos> iter = BlockPos.iterateOutwards(origin, radius, radius, radius).iterator();
 
         while (iter.hasNext()) {
             BlockPos pos = iter.next();
+            if ((!origin.isWithinDistance(pos, radius))) continue;
 
-            if (!origin.isWithinDistance(pos, radius)) continue;
+            if (Math.abs(originChunkPos.x - (pos.getX() / 16)) > 1 || Math.abs(originChunkPos.z - (pos.getZ() / 16)) > 1) continue; 
 
             double value = noise.sample(new UnblendedNoisePos(pos.getX(), pos.getY(), pos.getZ()));
             double distance = Math.sqrt(origin.getSquaredDistance(pos));
             double checkVal = value + (distance / radius);
+
+            // if (world.isValidForSetBlock(pos)) System.out.println("valid");
 
             if (Math.abs(checkVal - valueOffset) < valueRange && world.isValidForSetBlock(pos)) {
                 boolean hasAir = false;

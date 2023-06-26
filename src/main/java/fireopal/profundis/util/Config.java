@@ -25,12 +25,12 @@ public class Config {
     public String CONFIG_VERSION_DO_NOT_TOUCH_PLS = Profundis.VERSION.toString();
 
     public boolean logWhenLoaded = true;
-    public String comment1 = "Enable or disable any cave biome individually. For now, the Black Caves are disabled by default, as it is experimental.";
+    public String comment1 = "Enable or disable any cave biome individually.";
     public boolean generateFrozenCaves = true;
     public boolean generateMushroomCaves = true;
     public boolean generateMoltenCaves = true;
     public boolean generateAmethystCaves = true;
-    public boolean generateBlackCaves = false;
+    public boolean generateBlackCaves = true;
     public Debug debug = new Debug();
 
     // public Advanced advancedSettings = new Advanced();

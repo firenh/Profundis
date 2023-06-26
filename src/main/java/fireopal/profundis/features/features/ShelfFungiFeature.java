@@ -6,6 +6,7 @@ import com.mojang.serialization.Codec;
 
 import fireopal.profundis.features.features.config.ShelfFungiFeatureConfig;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
@@ -27,6 +28,7 @@ public class ShelfFungiFeature extends Feature<ShelfFungiFeatureConfig> {
 
         BlockState upperState = config.upperState();
         BlockState underState = config.underState();
+        boolean glowing = config.glowing();
         int radius = config.radius().get(random);
         int iterations = config.iterations().get(random);
         int radiusExt = (int)(radius * 1.5);
@@ -57,7 +59,12 @@ public class ShelfFungiFeature extends Feature<ShelfFungiFeatureConfig> {
         while (iter2.hasNext()) {
             BlockPos next = iter2.next();
             if (isValidLocation(origin.down(), next, iterations, radius * 3 / 4, random, world)) {
-                this.setBlockState(world, next, underState);
+                if (random.nextFloat() < 0.05) {
+                    this.setBlockState(world, next, Blocks.SHROOMLIGHT.getDefaultState());
+
+                } else {
+                    this.setBlockState(world, next, underState);
+                }
             }
         }
 

@@ -66,7 +66,6 @@ public class AmethystVeinFeature extends Feature<AmethystVeinFeatureConfig> {
         for (int i = 0; i < targetCount * 16 && targets.size() < targetCount; i += 1) {
             BlockPos pos = iter.next();
             if (world.isAir(pos) || !adjacentToAir(world, pos)) {
-                // Profundis.LOGGER.info("Invalid target: " + pos);
                 continue;
             }
 
@@ -81,6 +80,8 @@ public class AmethystVeinFeature extends Feature<AmethystVeinFeatureConfig> {
 
         ArrayList<Long> futureOutline = new ArrayList<>();
 
+        boolean hasPlaced = false;
+
         for (BlockPos target : targets) {
             // Profundis.LOGGER.info("On target: " + target + " !");
 
@@ -92,7 +93,11 @@ public class AmethystVeinFeature extends Feature<AmethystVeinFeatureConfig> {
 
             for (int i = 0; i < toDo; i += 1) {
                 BlockPos pos = vec3dToBlockPos(blockPosToVec3d(origin).add(offsetVector.multiply(i)));
+
+                if (!adjacentToAir(world, pos)) break;
+
                 setBlocks(world, pos, random, undergroundOnly, radius, maxDistance, distance(origin, pos), futureOutline);
+                hasPlaced = true;
             }
         }
 
@@ -176,7 +181,7 @@ public class AmethystVeinFeature extends Feature<AmethystVeinFeatureConfig> {
 
     private boolean adjacentToAir(StructureWorldAccess world, BlockPos pos) {
         for (Direction dir : Direction.values()) {
-            if (world.isAir(pos.offset(dir))) {
+            if (world.isAir(pos.offset(dir)) || world.isWater(pos.offset(dir))) {
                 return true;
             }
         }

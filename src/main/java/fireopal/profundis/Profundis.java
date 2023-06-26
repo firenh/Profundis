@@ -19,7 +19,7 @@ import fireopal.profundis.util.FOModVersion;
 public class Profundis implements ModInitializer {
 	public static final String MODID = "profundis";
 	public static final Logger LOGGER = LogManager.getLogger(MODID);
-	public static final FOModVersion VERSION = FOModVersion.fromString("1.5.0");
+	public static final FOModVersion VERSION = FOModVersion.fromString("1.5.1");
 
 	private static Config config;
 

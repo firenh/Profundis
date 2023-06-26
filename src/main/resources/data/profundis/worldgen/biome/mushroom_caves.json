@@ -75,7 +75,7 @@
       "minecraft:spring_lava"
     ],
     [
-      "minecraft:glow_lichen",
+      "profundis:glow_lichen_mushroom_caves",
       "minecraft:patch_tall_grass_2",
       "minecraft:trees_plains",
       "minecraft:flower_plains",

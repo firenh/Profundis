@@ -36,6 +36,7 @@
         "up": "true",
         "west": "true"
       }
-    }
+    },
+    "glowing": false
   }
 }

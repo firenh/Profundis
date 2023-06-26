@@ -19,10 +19,10 @@
                 "max_inclusive": 16
             }
         },
-        "scale": 2,
+        "scale": 4,
         "factor": 2,
-        "smearing": 2,
-        "value_range": 0.35,
+        "smearing": 8,
+        "value_range": 0.4,
         "value_offset": 0,
         "borders_air": true
     }

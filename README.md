@@ -38,7 +38,7 @@ Molten Caves<br>
 
 
 Amethyst Caves<br>
-<img src = "https://raw.githubusercontent.com/firenh/Profundis/1.20.x/images/2023-06-30_18.33.35.png" alt = "Amethyst Caves">
+<img src = "https://raw.githubusercontent.com/firenh/Profundis/1.20.x/images/2023-06-28_18.26.08.png" alt = "Amethyst Caves">
 
 Black Caves<br>
 <img src = "https://raw.githubusercontent.com/firenh/Profundis/1.20.x/images/2023-06-30_18.41.01.png" alt = "Black Caves">

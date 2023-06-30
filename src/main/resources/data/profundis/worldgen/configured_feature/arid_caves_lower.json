@@ -1,0 +1,47 @@
+{
+    "type": "profundis:large_ore_feature",
+    "config": {
+        "targets": [
+            {
+                "target": {
+                    "predicate_type": "minecraft:block_match",
+                    "block": "minecraft:deepslate"
+                },
+                "state": {
+                    "Name": "minecraft:tuff"
+                }
+            },
+            {
+                "target": {
+                    "predicate_type": "minecraft:block_match",
+                    "block": "minecraft:tuff"
+                },
+                "state": {
+                    "Name": "minecraft:red_sandstone"
+                }
+            },
+            {
+                "target": {
+                    "predicate_type": "minecraft:block_match",
+                    "block": "minecraft:stone"
+                },
+                "state": {
+                    "Name": "minecraft:red_sandstone"
+                }
+            }
+        ],
+        "radius": {
+            "type": "minecraft:uniform",
+            "value": {
+                "min_inclusive": 10,
+                "max_inclusive": 16
+            }
+        },
+        "scale": 4,
+        "factor": 2,
+        "smearing": 8,
+        "value_range": 0.4,
+        "value_offset": 0,
+        "borders_air": true
+    }
+}

@@ -6,7 +6,7 @@
         "minecraft:canyon"
       ]
     },
-    "downfall": 0.4,
+    "downfall": 0.0,
     "effects": {
       "fog_color": 12638463,
       "music": {
@@ -59,8 +59,12 @@
         "minecraft:disk_sand",
         "minecraft:disk_clay",
         "minecraft:disk_gravel",
-        "profundis:black_caves_upper",
-        "profundis:black_caves_lower"
+        "profundis:small_sand_surface",
+        "profundis:small_red_sand_surface",
+        "profundis:large_sand_surface",
+        "profundis:large_red_sand_surface",
+        "profundis:arid_caves_upper",
+        "profundis:arid_caves_lower"
       ],
       [],
       [
@@ -156,5 +160,5 @@
       "water_ambient": [],
       "water_creature": []
     },
-    "temperature": 0.8
+    "temperature": 2.0
   }

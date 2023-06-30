@@ -23,6 +23,9 @@ public class VanillaBiomeParametersHelper {
         else if (biome.getValue().equals(ProfundisBiomeKeys.MOLTEN_CAVES.getValue()) && Profundis.getConfig().generateMoltenCaves) bl = true;
         else if (biome.getValue().equals(ProfundisBiomeKeys.AMETHYST_CAVES.getValue()) && Profundis.getConfig().generateAmethystCaves) bl = true;
         else if (biome.getValue().equals(ProfundisBiomeKeys.BLACK_CAVES.getValue()) && Profundis.getConfig().generateBlackCaves) bl = true;
+        else if (biome.getValue().equals(ProfundisBiomeKeys.ARID_CAVES.getValue()) && Profundis.getConfig().generateAridCaves) bl = true;
+        else if (biome.getValue().equals(ProfundisBiomeKeys.FLORAL_LUSH_CAVES.getValue()) && Profundis.getConfig().generateFloralLushCaves) bl = true;
+        else if (biome.getValue().equals(ProfundisBiomeKeys.DIRT_CAVES.getValue()) && Profundis.getConfig().generateDirtCaves) bl = true;
 
 
         if (bl) {

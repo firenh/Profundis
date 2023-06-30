@@ -1,0 +1,38 @@
+{
+  "type": "profundis:netherrack_base_feature",
+  "config": {
+    "can_be_placed_on": {
+      "predicate_type": "minecraft:tag_match",
+      "tag": "profundis:base_stone_overworld_plus"
+    },
+    "contained": false,
+    "count": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 35,
+        "min_inclusive": 20
+      }
+    },
+    "height": {
+      "type": "minecraft:biased_to_bottom",
+      "value": {
+        "max_inclusive": 2,
+        "min_inclusive": 1
+      }
+    },
+    "radius": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 8,
+        "min_inclusive": 3
+      }
+    },
+    "sometimes_use_under_as_top": true,
+    "top_state": {
+      "Name": "minecraft:sand"
+    },
+    "under_state": {
+      "Name": "minecraft:sand"
+    }
+  }
+}

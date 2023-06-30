@@ -1,9 +1,9 @@
 {
-    "feature": "profundis:black_caves_upper",
+    "feature": "profundis:arid_caves_upper",
     "placement": [
         {
             "type": "minecraft:count",
-            "count": 18
+            "count": 12
         },
         {
             "type": "minecraft:in_square"

@@ -1,9 +1,9 @@
 {
-  "feature": "profundis:shelf_fungi",
+  "feature": "profundis:large_sand_surface",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 65
+      "count": 4
     },
     {
       "type": "minecraft:in_square"
@@ -21,16 +21,26 @@
       }
     },
     {
+      "type": "minecraft:surface_relative_threshold_filter",
+      "heightmap": "OCEAN_FLOOR_WG",
+      "max_inclusive": -13
+    },
+    {
       "type": "minecraft:environment_scan",
       "allowed_search_condition": {
-        "type": "minecraft:matching_block_tag",
-        "tag": "minecraft:base_stone_overworld"
+        "type": "minecraft:matching_blocks",
+        "blocks": "minecraft:air"
       },
       "direction_of_search": "down",
-      "max_steps": 14,
+      "max_steps": 12,
       "target_condition": {
-        "type": "minecraft:true"
+        "type": "minecraft:solid"
       }
+    },
+    {
+      "type": "minecraft:random_offset",
+      "xz_spread": 0,
+      "y_spread": 1
     },
     {
       "type": "minecraft:biome"

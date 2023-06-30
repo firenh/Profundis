@@ -15,5 +15,7 @@ public class ProfundisBiomeKeys {
     public static final RegistryKey<Biome> MOLTEN_CAVES = register("molten_caves");
     public static final RegistryKey<Biome> AMETHYST_CAVES = register("amethyst_caves");
     public static final RegistryKey<Biome> BLACK_CAVES = register("black_caves");
-    // public static final RegistryKey<Biome> FLORAL_LUSH_CAVES = register("floral_lush_caves");
+    public static final RegistryKey<Biome> ARID_CAVES = register("arid_caves");
+    public static final RegistryKey<Biome> FLORAL_LUSH_CAVES = register("floral_lush_caves");
+    public static final RegistryKey<Biome> DIRT_CAVES = register("dirt_caves");
 }

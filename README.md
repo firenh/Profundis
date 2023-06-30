@@ -26,7 +26,7 @@ All of the cave biomes' generation can be disabled individually in the config by
 
 
 <h3>Frozen Caves<br>
-<img src = "https://github.com/firenh/Profundis/blob/master/images/2022-02-03_12.05.08.png?raw=true" alt = "Frozen Caves">
+<img src = "https://raw.githubusercontent.com/firenh/Profundis/1.20.x/images/2023-06-30_18.39.03.png" alt = "Frozen Caves">
 
 
 Mushroom Caves<br>
@@ -38,10 +38,10 @@ Molten Caves<br>
 
 
 Amethyst Caves<br>
-<img src = "https://github.com/firenh/Profundis/blob/1.19.x/images/amethyst_caves_shwocase_dark.png?raw=true" alt = "Amethyst Caves">
+<img src = "https://raw.githubusercontent.com/firenh/Profundis/1.20.x/images/2023-06-30_18.33.35.png" alt = "Amethyst Caves">
 
 Black Caves<br>
-<img src = "https://github.com/firenh/Profundis/blob/1.20.x/images/black_caves_showcase.png?raw=true" alt = "Black Caves">
+<img src = "https://raw.githubusercontent.com/firenh/Profundis/1.20.x/images/2023-06-30_18.41.01.png" alt = "Black Caves">
 
 <br><br>
 *The Frozen Caves, Mushroom Caves, and Black Caves images were taken with Night Vision btw*

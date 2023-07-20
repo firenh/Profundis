@@ -4,12 +4,14 @@ import fireopal.profundis.Profundis;
 import fireopal.profundis.features.features.AmethystVeinFeature;
 import fireopal.profundis.features.features.CavePillarFeature;
 import fireopal.profundis.features.features.CaveSurfaceFeature;
+import fireopal.profundis.features.features.FrozenWaterFeature;
 import fireopal.profundis.features.features.IcicleFeature;
 import fireopal.profundis.features.features.LargeOreFeature;
 import fireopal.profundis.features.features.LavaFixerFeature;
 import fireopal.profundis.features.features.NetherrackBaseFeature;
 import fireopal.profundis.features.features.NotStupidDeltaFeature;
 import fireopal.profundis.features.features.ShelfFungiFeature;
+import fireopal.profundis.features.features.TerracottaBandsLargeOreFeature;
 import fireopal.profundis.features.features.config.AmethystVeinFeatureConfig;
 import fireopal.profundis.features.features.config.CavePillarFeatureConfig;
 import fireopal.profundis.features.features.config.CaveSurfaceFeatureConfig;
@@ -38,6 +40,8 @@ public class ProfundisFeatures {
     public final static Feature<ShelfFungiFeatureConfig> SHELF_FUNGI_FEATURE;
     public final static Feature<AmethystVeinFeatureConfig> AMETHYST_VEIN_FEATURE;
     public final static Feature<LargeOreFeatureConfig> LARGE_ORE_FEATURE;
+    public final static Feature<LargeOreFeatureConfig> TERACOTTA_BANDS_LARGE_ORE_FEATURE;
+    public final static Feature<DefaultFeatureConfig> FROZEN_WATER_FEATURE;
 
     static {
         ICICLE_FEATURE = register("icicle", new IcicleFeature(IcicleFeatureConfig.CODEC));
@@ -48,7 +52,9 @@ public class ProfundisFeatures {
         NETHERRACK_BASE_FEATURE = register("netherrack_base_feature", new NetherrackBaseFeature(NetherrackBaseFeatureConfig.CODEC));
         SHELF_FUNGI_FEATURE = register("shelf_fungi_feature", new ShelfFungiFeature(ShelfFungiFeatureConfig.CODEC));
         AMETHYST_VEIN_FEATURE = register("amethyst_vein_feature", new AmethystVeinFeature(AmethystVeinFeatureConfig.CODEC));
-        LARGE_ORE_FEATURE = register("large_ore_feature", new LargeOreFeature(LargeOreFeatureConfig.CODEC));
+        LARGE_ORE_FEATURE = register("large_ore_feature", new LargeOreFeature(LargeOreFeatureConfig.CODEC)); 
+        TERACOTTA_BANDS_LARGE_ORE_FEATURE = register("terracotta_bands_large_ore_feature", new TerracottaBandsLargeOreFeature(LargeOreFeatureConfig.CODEC));  
+        FROZEN_WATER_FEATURE = register("frozen_water_feature", new FrozenWaterFeature(DefaultFeatureConfig.CODEC));
     }
 
     public static void init() {

@@ -14,10 +14,10 @@
             {
                 "target": {
                     "predicate_type": "minecraft:block_match",
-                    "block": "minecraft:sandstone"
+                    "block": "minecraft:deepslate"
                 },
                 "state": {
-                    "Name": "minecraft:smooth_sandstone"
+                    "Name": "minecraft:red_sandstone"
                 }
             }
         ],
@@ -28,10 +28,10 @@
                 "max_inclusive": 16
             }
         },
-        "scale": 4,
+        "scale": 8,
         "factor": 2,
-        "smearing": 8,
-        "value_range": 0.4,
+        "smearing": 80,
+        "value_range": 0.5,
         "value_offset": 0,
         "borders_air": true
     }

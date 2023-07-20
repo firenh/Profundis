@@ -31,8 +31,8 @@ public class Config {
     public boolean generateMoltenCaves = true;
     public boolean generateAmethystCaves = true;
     public boolean generateBlackCaves = true;
-    public boolean generateAridCaves = false;
-    public boolean generateFloralLushCaves = false;
+    public boolean generateAridCaves = true;
+    public boolean generateFloralLushCaves = true;
     public boolean generateDirtCaves = false;
     public Debug debug = new Debug();
 

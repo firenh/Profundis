@@ -1,0 +1,14 @@
+{
+    "structures": [
+        {
+            "structure": "profundis:amethyst_dungeon",
+            "weight": 1
+        }
+    ],
+    "placement": {
+        "type": "minecraft:random_spread",
+        "spacing": 15,
+        "separation": 12,
+        "salt": 43123452
+    }
+}

@@ -2,6 +2,7 @@ package fireopal.profundis.features.features;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 
 import com.mojang.serialization.Codec;
 
@@ -23,6 +24,18 @@ public class LargeOreFeature extends Feature<LargeOreFeatureConfig> {
 
     public LargeOreFeature(Codec<LargeOreFeatureConfig> configCodec) {
         super(configCodec);
+    }
+
+    protected Optional<BlockState> getBlockState(StructureWorldAccess world, BlockPos pos, BlockState currentState, Random random, List<OreFeatureConfig.Target> targets) {
+        for (OreFeatureConfig.Target t : targets) {
+            RuleTest rule = t.target;
+            
+            if (rule.test(currentState, random)) {
+                return Optional.of(t.state);
+            }
+        }
+
+        return Optional.empty();
     }
 
     @Override
@@ -75,17 +88,14 @@ public class LargeOreFeature extends Feature<LargeOreFeatureConfig> {
                 }
 
                 if (hasAir) {
-
                     BlockState currentState = world.getBlockState(pos);
+                    Optional<BlockState> newState = getBlockState(world, pos, currentState, random, targets);
 
-                    for (OreFeatureConfig.Target t : targets) {
-                        RuleTest rule = t.target;
-                        
-                        if (rule.test(currentState, random)) {
-                            world.setBlockState(pos, t.state, radius, radius);
-                            returnVal = true;
-                        }
+                    if (newState.isPresent()) {
+                        this.setBlockState(world, pos, newState.get());
+                        returnVal = true;
                     }
+
                 }
             }
         }

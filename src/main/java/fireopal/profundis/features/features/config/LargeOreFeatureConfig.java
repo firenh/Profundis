@@ -21,7 +21,7 @@ public record LargeOreFeatureConfig(
 ) implements FeatureConfig {
 
     public static final Codec<LargeOreFeatureConfig> CODEC = RecordCodecBuilder.create(instance -> instance.group(
-            Codec.list(OreFeatureConfig.Target.CODEC).fieldOf("targets").forGetter(LargeOreFeatureConfig::targets),
+            Codec.list(OreFeatureConfig.Target.CODEC).optionalFieldOf("targets", List.of()).forGetter(LargeOreFeatureConfig::targets),
             IntProvider.NON_NEGATIVE_CODEC.fieldOf("radius").forGetter(LargeOreFeatureConfig::radius),
             Codec.DOUBLE.fieldOf("scale").forGetter(LargeOreFeatureConfig::scale),
             Codec.DOUBLE.fieldOf("factor").forGetter(LargeOreFeatureConfig::factor),

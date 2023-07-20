@@ -5,6 +5,8 @@
         "profundis:mushroom_caves",
         "profundis:molten_caves",
         "profundis:amethyst_caves",
-        "profundis:black_caves"
+        "profundis:black_caves",
+        "profundis:arid_caves",
+        "profundis:floral_lush_caves"
     ]
 }

@@ -59,7 +59,7 @@ public class ShelfFungiFeature extends Feature<ShelfFungiFeatureConfig> {
         while (iter2.hasNext()) {
             BlockPos next = iter2.next();
             if (isValidLocation(origin.down(), next, iterations, radius * 3 / 4, random, world)) {
-                if (random.nextFloat() < 0.05) {
+                if (glowing && random.nextFloat() < 0.05) {
                     this.setBlockState(world, next, Blocks.SHROOMLIGHT.getDefaultState());
 
                 } else {

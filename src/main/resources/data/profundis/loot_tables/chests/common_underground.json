@@ -1,0 +1,342 @@
+{
+    "pools": [
+        {
+            "rolls": 2,
+            "entries": [
+                {
+                    "type": "minecraft:alternatives",
+                    "children": [
+                        {
+                            "type": "minecraft:group",
+                            "children": [
+                                {
+                                    "type": "minecraft:item",
+                                    "weight": 1,
+                                    "name": "minecraft:pink_petals"
+                                },
+                                {
+                                    "type": "minecraft:item",
+                                    "weight": 2,
+                                    "name": "minecraft:moss_block"
+                                }
+                            ],
+                            "conditions": [
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "profundis:floral_lush_caves"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "minecraft:group",
+                            "children": [
+                                {
+                                    "type": "minecraft:item",
+                                    "weight": 1,
+                                    "name": "minecraft:sand"
+                                },
+                                {
+                                    "type": "minecraft:item",
+                                    "weight": 2,
+                                    "name": "minecraft:terracotta"
+                                }
+                            ],
+                            "conditions": [
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "profundis:arid_caves"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "minecraft:item",
+                            "name": "minecraft:blackstone",
+                            "conditions": [
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "profundis:black_caves"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "minecraft:group",
+                            "children": [
+                                {
+                                    "type": "minecraft:item",
+                                    "weight": 1,
+                                    "name": "minecraft:amethyst_block"
+                                },
+                                {
+                                    "type": "minecraft:item",
+                                    "weight": 2,
+                                    "name": "minecraft:amethyst_cluster"
+                                }
+                            ],
+                            "conditions": [
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "profundis:amethyst_caves"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "minecraft:group",
+                            "children": [
+                                {
+                                    "type": "minecraft:item",
+                                    "weight": 1,
+                                    "name": "minecraft:magma_block"
+                                },
+                                {
+                                    "type": "minecraft:item",
+                                    "weight": 2,
+                                    "name": "minecraft:basalt"
+                                }
+                            ],
+                            "conditions": [
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "profundis:molten_caves"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "minecraft:group",
+                            "children": [
+                                {
+                                    "type": "minecraft:item",
+                                    "weight": 2,
+                                    "name": "minecraft:brown_mushroom"
+                                },
+                                {
+                                    "type": "minecraft:item",
+                                    "weight": 2,
+                                    "name": "minecraft:red_mushroom"
+                                }
+                            ],
+                            "conditions": [
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "profundis:mushroom_caves"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "minecraft:group",
+                            "children": [
+                                {
+                                    "type": "minecraft:item",
+                                    "weight": 1,
+                                    "name": "minecraft:packed_ice"
+                                },
+                                {
+                                    "type": "minecraft:item",
+                                    "weight": 2,
+                                    "name": "minecraft:ice"
+                                }
+                            ],
+                            "conditions": [
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "profundis:frozen_caves"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "minecraft:group",
+                            "children": [
+                                {
+                                    "type": "minecraft:item",
+                                    "weight": 1,
+                                    "name": "minecraft:pointed_dripstone"
+                                },
+                                {
+                                    "type": "minecraft:item",
+                                    "weight": 1,
+                                    "name": "minecraft:dripstone_block"
+                                }
+                            ],
+                            "conditions": [
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:dripstone_caves"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "minecraft:group",
+                            "children": [
+                                {
+                                    "type": "minecraft:item",
+                                    "weight": 1,
+                                    "name": "minecraft:glow_berries"
+                                },
+                                {
+                                    "type": "minecraft:item",
+                                    "weight": 1,
+                                    "name": "minecraft:moss_block"
+                                }
+                            ],
+                            "conditions": [
+                                {
+                                    "condition": "minecraft:location_check",
+                                    "predicate": {
+                                        "biome": "minecraft:lush_caves"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "functions": [
+                {
+                    "function": "minecraft:set_count",
+                    "count": {
+                        "min": 4,
+                        "max": 6
+                    }
+                }
+            ]
+        },
+        {
+            "rolls": {
+                "min": 1,
+                "max": 2
+            },
+            "bonus_rolls": {
+                "type": "minecraft:constant",
+                "value": 2
+            },
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "weight": 5,
+                    "name": "minecraft:flint_and_steel"
+                },
+                {
+                    "type": "minecraft:item",
+                    "weight": 5,
+                    "name": "minecraft:iron_axe"
+                },
+                {
+                    "type": "minecraft:item",
+                    "weight": 2,
+                    "name": "minecraft:diamond_sword"
+                },
+                {
+                    "type": "minecraft:item",
+                    "weight": 5,
+                    "name": "minecraft:iron_sword"
+                },
+                {
+                    "type": "minecraft:item",
+                    "weight": 5,
+                    "name": "minecraft:golden_pickaxe"
+                },
+                {
+                    "type": "minecraft:item",
+                    "weight": 5,
+                    "name": "minecraft:diamond_pickaxe"
+                },
+                {
+                    "type": "minecraft:item",
+                    "weight": 15,
+                    "name": "minecraft:iron_pickaxe"
+                }
+            ],
+            "functions": [
+                {
+                    "function": "minecraft:enchant_with_levels",
+                    "levels": {
+                        "min": 1,
+                        "max": 15
+                    },
+                    "treasure": true,
+                    "conditions": [
+                        {
+                            "condition": "minecraft:random_chance",
+                            "chance": 0.5
+                        }
+                    ]
+                },
+                {
+                    "function": "minecraft:set_damage",
+                    "damage": {
+                        "type": "minecraft:uniform",
+                        "min": 0.3,
+                        "max": 1
+                    }
+                }
+            ]
+        },
+        {
+            "rolls": {
+                "min": 2,
+                "max": 3
+            },
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "weight": 4,
+                    "name": "minecraft:dirt"
+                },
+                {
+                    "type": "minecraft:item",
+                    "weight": 6,
+                    "name": "minecraft:tuff"
+                },
+                {
+                    "type": "minecraft:item",
+                    "weight": 10,
+                    "name": "minecraft:cobbled_deepslate"
+                },
+                {
+                    "type": "minecraft:item",
+                    "weight": 5,
+                    "name": "minecraft:andesite"
+                },
+                {
+                    "type": "minecraft:item",
+                    "weight": 3,
+                    "name": "minecraft:diorite"
+                },
+                {
+                    "type": "minecraft:item",
+                    "weight": 3,
+                    "name": "minecraft:granite"
+                },
+                {
+                    "type": "minecraft:item",
+                    "weight": 10,
+                    "name": "minecraft:cobblestone"
+                }
+            ],
+            "functions": [
+                {
+                    "function": "minecraft:set_count",
+                    "count": {
+                        "min": 3,
+                        "max": 5
+                    }
+                }
+            ]
+        }
+    ]
+}

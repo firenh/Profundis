@@ -1,9 +1,11 @@
 {
-    "feature": "profundis:arid_caves_upper",
+    "feature": "profundis:arid_caves_terracotta_bands",
     "placement": [
         {
-            "type": "minecraft:count",
-            "count": 12
+            "type": "minecraft:noise_based_count",
+            "noise_to_count_ratio": 50,
+            "noise_factor": 0,
+            "noise_offset": 0.25
         },
         {
             "type": "minecraft:in_square"
@@ -13,7 +15,7 @@
             "height": {
                 "type": "minecraft:uniform",
                 "min_inclusive": {
-                    "absolute": 0
+                    "above_bottom": 0
                 },
                 "max_inclusive": {
                     "above_bottom": 120

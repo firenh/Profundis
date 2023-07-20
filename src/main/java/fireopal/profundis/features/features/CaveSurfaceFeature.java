@@ -68,7 +68,7 @@ public class CaveSurfaceFeature extends Feature<CaveSurfaceFeatureConfig> {
                         if (random.nextFloat() <= chance) world.setBlockState(mutable.offset(Axis.Y, offset), blockState, 0);
                     }
                 } else {
-                    if ((onState.equals(targetBlock) || targetBlock.test(blockState, random)) && world.isAir(mutable.up()) && mutable.isWithinDistance(origin, size)) {
+                    if ((targetBlock.test(blockState, random)) && world.isAir(mutable.up()) && mutable.isWithinDistance(origin, size)) {
                         if (random.nextFloat() <= chance) world.setBlockState(mutable.offset(Axis.Y, offset), blockState, 0);
                     }
                 }

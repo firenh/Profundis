@@ -1,0 +1,14 @@
+{
+    "structures": [
+        {
+            "structure": "profundis:mushroom_house",
+            "weight": 1
+        }
+    ],
+    "placement": {
+        "type": "minecraft:random_spread",
+        "spacing": 7,
+        "separation": 3,
+        "salt": 1981534604
+    }
+}

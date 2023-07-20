@@ -80,8 +80,6 @@ public class AmethystVeinFeature extends Feature<AmethystVeinFeatureConfig> {
 
         ArrayList<Long> futureOutline = new ArrayList<>();
 
-        boolean hasPlaced = false;
-
         for (BlockPos target : targets) {
             // Profundis.LOGGER.info("On target: " + target + " !");
 
@@ -97,7 +95,6 @@ public class AmethystVeinFeature extends Feature<AmethystVeinFeatureConfig> {
                 if (!adjacentToAir(world, pos)) break;
 
                 setBlocks(world, pos, random, undergroundOnly, radius, maxDistance, distance(origin, pos), futureOutline);
-                hasPlaced = true;
             }
         }
 

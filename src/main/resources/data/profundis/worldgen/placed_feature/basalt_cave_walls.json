@@ -1,9 +1,9 @@
 {
-    "feature": "profundis:arid_caves_lower",
+    "feature": "profundis:basalt_cave_walls",
     "placement": [
         {
             "type": "minecraft:count",
-            "count": 6
+            "count": 4
         },
         {
             "type": "minecraft:in_square"
@@ -16,7 +16,7 @@
                     "above_bottom": 0
                 },
                 "max_inclusive": {
-                    "absolute": 60
+                    "above_bottom": 120
                 }
             }
         },

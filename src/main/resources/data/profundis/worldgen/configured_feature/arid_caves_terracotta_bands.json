@@ -1,0 +1,18 @@
+{
+    "type": "profundis:terracotta_bands_large_ore_feature",
+    "config": {
+        "radius": {
+            "type": "minecraft:uniform",
+            "value": {
+                "min_inclusive": 10,
+                "max_inclusive": 16
+            }
+        },
+        "scale": 8,
+        "factor": 2,
+        "smearing": 80,
+        "value_range": 0.5,
+        "value_offset": 0,
+        "borders_air": true
+    }
+}

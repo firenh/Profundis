@@ -31,7 +31,6 @@
       "profundis:icy_surface",
       "profundis:large_icy_surface",
       "profundis:snow_layer_cave",
-      "profundis:frozen_aquifer",
       "profundis:frozen_lava_aquifer",
       "profundis:small_icicles",
       "profundis:large_icicles",
@@ -87,7 +86,8 @@
       "minecraft:patch_pumpkin"
     ],
     [
-      "minecraft:freeze_top_layer"
+      "minecraft:freeze_top_layer",
+      "profundis:frozen_aquifer"
     ]
   ],
   "has_precipitation": true,

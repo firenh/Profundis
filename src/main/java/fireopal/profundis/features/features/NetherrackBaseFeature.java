@@ -6,14 +6,11 @@ import java.util.Optional;
 import com.mojang.serialization.Codec;
 
 import fireopal.profundis.features.features.config.NetherrackBaseFeatureConfig;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.registry.entry.RegistryEntryList;
-import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;

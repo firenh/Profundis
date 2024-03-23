@@ -1,0 +1,14 @@
+{
+    "structures": [
+        {
+            "structure": "profundis:blackstone_lantern",
+            "weight": 1
+        }
+    ],
+    "placement": {
+        "type": "minecraft:random_spread",
+        "spacing": 14,
+        "separation": 2,
+        "salt": 21352369
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:jigsaw",
+    "biomes": "#profundis:has_structure/sanctuary",
+    "step": "underground_structures",
+    "spawn_overrides": {},
+    "terrain_adaptation": "beard_thin",
+    "start_pool": "profundis:sanctuary",
+    "size": 1,
+    "start_height": {
+        "type": "minecraft:uniform",
+        "min_inclusive": {
+            "above_bottom": 16
+        },
+        "max_inclusive": {
+            "absolute": 120
+        }
+    },
+    "max_distance_from_center": 80,
+    "use_expansion_hack": false
+}

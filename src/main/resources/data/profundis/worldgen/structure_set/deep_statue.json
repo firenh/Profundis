@@ -1,0 +1,14 @@
+{
+    "structures": [
+        {
+            "structure": "profundis:deep_statue",
+            "weight": 1
+        }
+    ],
+    "placement": {
+        "type": "minecraft:random_spread",
+        "spacing": 20,
+        "separation": 12,
+        "salt": 820579201
+    }
+}

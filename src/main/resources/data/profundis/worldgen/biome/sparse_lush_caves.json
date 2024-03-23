@@ -6,16 +6,22 @@
         "minecraft:canyon"
       ]
     },
-    "downfall": 0.0,
+    "downfall": 0.5,
     "effects": {
       "fog_color": 12638463,
+      "mood_sound": {
+        "block_search_extent": 8,
+        "offset": 2.0,
+        "sound": "minecraft:ambient.cave",
+        "tick_delay": 6000
+      },
       "music": {
         "max_delay": 24000,
         "min_delay": 12000,
         "replace_current_music": false,
-        "sound": "minecraft:music.overworld.dripstone_caves"
+        "sound": "minecraft:music.overworld.lush_caves"
       },
-      "sky_color": 7842047,
+      "sky_color": 8103167,
       "water_color": 4159204,
       "water_fog_color": 329011
     },
@@ -37,6 +43,10 @@
       [
         "minecraft:ore_dirt",
         "minecraft:ore_gravel",
+        "minecraft:ore_granite_upper",
+        "minecraft:ore_granite_lower",
+        "minecraft:ore_diorite_upper",
+        "minecraft:ore_diorite_lower",
         "minecraft:ore_andesite_upper",
         "minecraft:ore_andesite_lower",
         "minecraft:ore_tuff",
@@ -54,17 +64,12 @@
         "minecraft:ore_diamond_buried",
         "minecraft:ore_lapis",
         "minecraft:ore_lapis_buried",
-        "minecraft:ore_copper_large",
+        "minecraft:ore_copper",
         "minecraft:underwater_magma",
+        "minecraft:ore_clay",
         "minecraft:disk_sand",
         "minecraft:disk_clay",
-        "minecraft:disk_gravel",
-        "profundis:small_sand_surface",
-        "profundis:small_red_sand_surface",
-        "profundis:large_sand_surface",
-        "profundis:large_red_sand_surface",
-        "profundis:arid_caves_sandstone",
-        "profundis:arid_caves_terracotta_bands"
+        "minecraft:disk_gravel"
       ],
       [],
       [
@@ -74,13 +79,12 @@
       [
         "minecraft:glow_lichen",
         "minecraft:patch_tall_grass_2",
-        "minecraft:trees_plains",
-        "minecraft:flower_plains",
-        "minecraft:patch_grass_plain",
-        "minecraft:brown_mushroom_normal",
-        "minecraft:red_mushroom_normal",
-        "minecraft:patch_sugar_cane",
-        "minecraft:patch_pumpkin"
+        "minecraft:cave_vines",
+        "profundis:sparse_lush_caves_dirt",
+        "profundis:sparse_lush_caves_vegetation",
+        "minecraft:rooted_azalea_tree",
+        "minecraft:spore_blossom",
+        "minecraft:classic_vines_cave_feature"
       ],
       [
         "minecraft:freeze_top_layer"
@@ -97,7 +101,14 @@
           "weight": 10
         }
       ],
-      "axolotls": [],
+      "axolotls": [
+        {
+          "type": "minecraft:axolotl",
+          "maxCount": 6,
+          "minCount": 4,
+          "weight": 10
+        }
+      ],
       "creature": [],
       "misc": [],
       "monster": [
@@ -158,8 +169,15 @@
           "weight": 10
         }
       ],
-      "water_ambient": [],
+      "water_ambient": [
+        {
+          "type": "minecraft:tropical_fish",
+          "maxCount": 8,
+          "minCount": 8,
+          "weight": 25
+        }
+      ],
       "water_creature": []
     },
-    "temperature": 2.0
+    "temperature": 0.5
   }

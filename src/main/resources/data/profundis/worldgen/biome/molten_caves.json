@@ -74,7 +74,8 @@
       "minecraft:disk_sand",
       "minecraft:disk_clay",
       "minecraft:disk_gravel",
-      "profundis:basalt_cave_walls"
+      "profundis:basalt_cave_walls",
+      "profundis:magma_cave_walls_replace_basalt"
     ],
     [],
     [

@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "Profundis",
-  "description": "A world generation mod adding in five new underground biomes: the Frozen Caves, the Mushroom Caves, the Molten Caves, the Amethyst Caves, and the Black Caves. This mod can work on the server without clients needing to download a mod!",
+  "description": "A world generation mod adding in seven new underground biomes. This mod can work on the server without clients needing to download a mod!",
   "authors": [
     "FireNH"
   ],

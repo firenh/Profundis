@@ -24,7 +24,7 @@ public class Profundis implements ModInitializer {
 	private static Config config;
 
 	public static Identifier id(String id) {
-		return Identifier.of(MODID, id);
+		return new Identifier(MODID, id);
 	}
 
 	@Override

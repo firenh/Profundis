@@ -1,6 +1,6 @@
 {
     "type": "minecraft:jigsaw",
-    "biomes": "#profundis:has_structure/mushroom_house",
+    "biomes": "profundis:mushroom_caves",
     "step": "underground_structures",
     "spawn_overrides": {},
     "terrain_adaptation": "beard_thin",

@@ -1,6 +1,6 @@
 {
     "type": "minecraft:jigsaw",
-    "biomes": "#profundis:has_structure/amethyst_dungeon",
+    "biomes": "profundis:amethyst_caves",
     "step": "underground_structures",
     "spawn_overrides": {},
     "terrain_adaptation": "bury",

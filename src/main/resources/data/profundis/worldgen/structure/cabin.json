@@ -1,6 +1,6 @@
 {
 	"type": "minecraft:jigsaw",
-	"biomes": "#profundis:has_structure/cabin",
+	"biomes": "profundis:dirt_caves",
 	"step": "underground_structures",
 	"spawn_overrides": {},
 	"terrain_adaptation": "none",

@@ -1,6 +1,6 @@
 {
     "type": "minecraft:jigsaw",
-    "biomes": "#profundis:has_structure/deep_statue",
+    "biomes": "profundis:molten_caves",
     "step": "underground_structures",
     "spawn_overrides": {},
     "terrain_adaptation": "beard_thin",
